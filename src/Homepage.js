@@ -33,6 +33,9 @@ class Homepage extends Component {
                 <div id="navbar">
                     <h1 id="myName" className={this.state.animate ? "fade-in" : ""}>Zeth De Luna</h1>
                 </div>
+                <div id="myOpening" className={this.state.animate ? "slide-top": ""}>
+                    <h2>Hi,<br/> my name is <span>Zeth</span>,<br/>an aspiring <span>web developer</span>.</h2>
+                </div>
             </div>
         )
     }
