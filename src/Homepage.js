@@ -36,6 +36,16 @@ class Homepage extends Component {
                 <div id="myOpening" className={this.state.animate ? "slide-top": ""}>
                     <h2>Hi,<br/> my name is <span>Zeth</span>,<br/>an aspiring <span>web developer</span>.</h2>
                 </div>
+                <div id="skills">
+                    <h3>
+                        &#60;div&#62;<br/>
+                        &#160;&#160; html <br/>
+                        &#160;&#160; css <br/> 
+                        &#160;&#160; javascript <br/>
+                        &#160;&#160; react <br/>
+                        &#60;/div&#62;
+                    </h3>
+                </div>
             </div>
         )
     }
