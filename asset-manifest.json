@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/website/static/css/main.d3478cea.chunk.css",
-    "main.js": "/website/static/js/main.8207c365.chunk.js",
-    "main.js.map": "/website/static/js/main.8207c365.chunk.js.map",
-    "runtime-main.js": "/website/static/js/runtime-main.549fda36.js",
-    "runtime-main.js.map": "/website/static/js/runtime-main.549fda36.js.map",
-    "static/js/2.ee3ed533.chunk.js": "/website/static/js/2.ee3ed533.chunk.js",
-    "static/js/2.ee3ed533.chunk.js.map": "/website/static/js/2.ee3ed533.chunk.js.map",
-    "static/js/3.63aaca9a.chunk.js": "/website/static/js/3.63aaca9a.chunk.js",
-    "static/js/3.63aaca9a.chunk.js.map": "/website/static/js/3.63aaca9a.chunk.js.map",
-    "index.html": "/website/index.html",
-    "static/css/main.d3478cea.chunk.css.map": "/website/static/css/main.d3478cea.chunk.css.map",
-    "static/js/2.ee3ed533.chunk.js.LICENSE.txt": "/website/static/js/2.ee3ed533.chunk.js.LICENSE.txt",
-    "static/media/App.scss": "/website/static/media/Virtuous-Slab.700afea4.otf",
-    "static/media/background_ink.84e99b86.mp4": "/website/static/media/background_ink.84e99b86.mp4"
+    "main.css": "/static/css/main.34f58ca4.chunk.css",
+    "main.js": "/static/js/main.8207c365.chunk.js",
+    "main.js.map": "/static/js/main.8207c365.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.fc8fbf4b.js",
+    "runtime-main.js.map": "/static/js/runtime-main.fc8fbf4b.js.map",
+    "static/js/2.ee3ed533.chunk.js": "/static/js/2.ee3ed533.chunk.js",
+    "static/js/2.ee3ed533.chunk.js.map": "/static/js/2.ee3ed533.chunk.js.map",
+    "static/js/3.63aaca9a.chunk.js": "/static/js/3.63aaca9a.chunk.js",
+    "static/js/3.63aaca9a.chunk.js.map": "/static/js/3.63aaca9a.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.34f58ca4.chunk.css.map": "/static/css/main.34f58ca4.chunk.css.map",
+    "static/js/2.ee3ed533.chunk.js.LICENSE.txt": "/static/js/2.ee3ed533.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/static/media/Virtuous-Slab.700afea4.otf",
+    "static/media/background_ink.84e99b86.mp4": "/static/media/background_ink.84e99b86.mp4"
   },
   "entrypoints": [
-    "static/js/runtime-main.549fda36.js",
+    "static/js/runtime-main.fc8fbf4b.js",
     "static/js/2.ee3ed533.chunk.js",
-    "static/css/main.d3478cea.chunk.css",
+    "static/css/main.34f58ca4.chunk.css",
     "static/js/main.8207c365.chunk.js"
   ]
 }
