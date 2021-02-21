@@ -1,10 +1,16 @@
 @font-face { font-family: Virtuous; src: url('./fonts/Virtuous-Slab.otf')}
 @font-face { font-family: Virtuous; font-weight: bold; src: url('./fonts/Virtuous-Slab\ Bold.otf')}
+@font-face { font-family: HomemadeApple; src: url('./fonts/HomemadeApple-Regular.ttf')}
 
 html, body {
   background-color: #000;
   color: #fff;
   overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 #homepage {
@@ -13,22 +19,53 @@ html, body {
 
   #bkgdVideo {
     position: absolute;
-    height: 100vh;
+    // height: 100%;
   }
 
   #navbar {
     display: flex;
     flex-direction: row;
+    position: fixed;
+    width: 100vw;
+    height: 100px;
+    z-index: 2;
+    // background: rgba(200, 200, 200, 0.5);
     #myName {
       font-family: Virtuous;
       font-weight: bold;
       font-size: 20px;
       position: absolute;
-      padding-top: 10px;
-      top: 5%;
-      left: 5%;
+      margin: 0;
+      padding-top: 2px;
+      top: 50%;
+      left: 4%;
+      transform: translateY(-50%);
       text-transform: lowercase;
       letter-spacing: 8px;
+    }
+
+    ul {
+      list-style: none;
+      font-size: 20px;
+      position: absolute;
+      margin: 0;
+      top: 50%;
+      right: 4%;
+      transform: translateY(-50%);
+
+      li {
+        display: inline-block;
+        padding: 0 12px;
+      }
+
+      i {
+        display: inline-block;
+        transition: all 0.4s ease-in-out;
+      }
+      i:hover {
+        transform: rotate(360deg);
+      }
+      
     }
   }
 
@@ -43,17 +80,17 @@ html, body {
   }
 
   #skills {
-    font-size: 22px;
-    font-weight: lighter;
+    font-family: HomemadeApple;
+    font-size: 14px;
     position: absolute;
-    bottom: 10%;
-    right: 10%;
+    bottom: 8%;
+    right: 8%;
   }
 
 }
 
 .fade-in {
-    animation: fade 3s ease-in forwards;
+    animation: fade 2.7s ease-in forwards;
     opacity: 0;
 }
 
@@ -83,5 +120,25 @@ html, body {
     opacity: 0.8;
     -webkit-transform: translateY(0);
             transform: translateY(0);
+  }
+}
+
+.slide-left {
+    animation: slide-left 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    opacity: 0;
+}
+
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(150px);
+            transform: translateX(150px);
+  }
+  50% {
+    opacity: 0.01;
+  }
+  100% {
+    opacity: 0.8;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
