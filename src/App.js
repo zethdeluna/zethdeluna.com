@@ -6,10 +6,10 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        xMain: 0,
-        yMain: 0,
-        xTrailing: 0,
-        yTrailing: 0
+        xMain: 897.5,
+        yMain: 470.8,
+        xTrailing: 897.5,
+        yTrailing: 470.8
     }
   }
 
@@ -36,6 +36,18 @@ class App extends React.Component {
       xTrailing,
       yTrailing
     } = this.state;
+
+    const cursor = document.querySelector('.cursor:nth-child(2)')
+    const links = document.querySelectorAll('a')
+
+    links.forEach(link => {
+      link.addEventListener('mouseenter', e => {
+        cursor.classList.add('enlarged')
+      })
+      link.addEventListener('mouseout', e => {
+        cursor.classList.remove('enlarged')
+      })
+    })
     return (
       <div className="App" onMouseMove={e => {this.handleMouseMove(e)}}>
         <div className="cursors">
