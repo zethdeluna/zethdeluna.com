@@ -8,9 +8,26 @@ html, body {
   overflow-x: hidden;
 }
 
+* {
+  cursor: none;
+}
+
 a {
   text-decoration: none;
   color: inherit;
+  cursor: none;
+}
+
+#cursor {
+  width: 24px;
+  height: 24px;
+  background: #ffe5eb;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 999;
+  // transition: transform 0.5s ease;
 }
 
 #homepage {
@@ -46,7 +63,7 @@ a {
 
     ul {
       list-style: none;
-      font-size: 20px;
+      font-size: 24px;
       position: absolute;
       margin: 0;
       top: 50%;
