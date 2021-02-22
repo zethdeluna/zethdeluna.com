@@ -26,6 +26,9 @@ a {
   height: 8px;
   width: 8px;
   border-radius: 50%;
+  transition: 
+    width 400ms ease,
+    height 400ms ease;
 }
 .cursors .cursor:nth-child(1) {
   background-color: #ffe5eb;
@@ -40,20 +43,10 @@ a {
   z-index: 2400;
   transform: translate(-50%, -50%);
 }
-// .cursor--small {
-//   width: 8px;
-//   height: 8px;
-//   left: -4px;
-//   top: -4px;
-//   background: #ffe5eb;
-//   border-radius: 50%;
-//   z-index: 2400;
-// }
-// .cursor--canvas {
-//   width: 100vw;
-//   height: 100vh;
-//   z-index: 2500;
-// }
+.cursor:nth-child(2).enlarged {
+  height: 40px;
+  width: 40px;
+}
 
 #homepage {
   position: relative;
