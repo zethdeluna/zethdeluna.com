@@ -1,18 +1,20 @@
 import React from 'react';
 import './App.scss';
 import Homepage from './Homepage';
+import Navbar from './Navigation';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+        // initial state for cursor position
         xMain: 897.5,
         yMain: 470.8,
         xTrailing: 897.5,
         yTrailing: 470.8
     }
   }
-
+  // update cursor position on mouse move
   handleMouseMove = (e) => {
       const { clientX, clientY } = e;
 
@@ -36,7 +38,8 @@ class App extends React.Component {
       xTrailing,
       yTrailing
     } = this.state;
-
+    
+    // cursor effect on hover over links
     const cursor = document.querySelector('.cursor:nth-child(2)')
     const links = document.querySelectorAll('a')
 
@@ -54,7 +57,8 @@ class App extends React.Component {
           <div className="cursor fade-in" style={{left: xMain, top: yMain}}/>
           <div className="cursor fade-in" style={{left: xTrailing, top: yTrailing}}/>
         </div>
-        <Homepage/>
+          <Navbar/>
+          <Homepage/>
       </div>
     )
   }

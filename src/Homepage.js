@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import smoothscroll from 'smoothscroll-polyfill';
 import background_ink from './background_ink.mp4';
 
 class Homepage extends Component {
@@ -8,6 +9,8 @@ class Homepage extends Component {
             // animate property for deciding how tot animate an element
             animate: true 
         }
+        this.myRef = React.createRef();
+        smoothscroll.polyfill();
     }
     DidMount() {
         // check for token (if page has loaded or not)
@@ -24,6 +27,7 @@ class Homepage extends Component {
             });
         }
     }
+        
     render() {
         return (
             <div id="homepage">
@@ -31,14 +35,6 @@ class Homepage extends Component {
                 <video id="bkgdVideo" autoPlay loop muted>
                     <source src={background_ink} type="video/mp4" />
                 </video>
-                {/* navigation */}
-                <div id="navbar" className={this.state.animate ? "fade-in" : ""}>
-                    <h1 id="myName"><a href="#homepage">Zeth De Luna</a></h1>
-                    <ul>
-                        <li><a href="https://github.com/zethdeluna" target="_blank" rel="noreferrer"><i class="fab fa-github-alt"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/zethdeluna/" target="_blank" rel="noreferrer"><i class="fab fa-linkedin-in"></i></a></li>
-                    </ul>
-                </div>
                 {/* header text */}
                 <div id="myOpening" className={this.state.animate ? "slide-top": ""}>
                     <h2>Hi,<br/> my name is <span>Zeth</span>,<br/>an aspiring <span>web developer</span>.</h2>

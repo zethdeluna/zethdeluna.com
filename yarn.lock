@@ -6748,19 +6748,7 @@
     "jest-regex-util" "^26.0.0"
     "jest-snapshot" "^26.6.2"
 
-"jest-resolve@*":
-  "version" "26.6.0"
-  dependencies:
-    "@jest/types" "^26.6.0"
-    "chalk" "^4.0.0"
-    "graceful-fs" "^4.2.4"
-    "jest-pnp-resolver" "^1.2.2"
-    "jest-util" "^26.6.0"
-    "read-pkg-up" "^7.0.1"
-    "resolve" "^1.17.0"
-    "slash" "^3.0.0"
-
-"jest-resolve@^26.6.2":
+"jest-resolve@*", "jest-resolve@^26.6.2":
   "integrity" "sha512-sOxsZOq25mT1wRsfHcbtkInS+Ek7Q8jCHUB0ZUTP0tc/c41QHriU/NunqMfCUWsL4H3MHpvQD4QR9kSYhS7UvQ=="
   "resolved" "https://registry.yarnpkg.com/jest-resolve/-/jest-resolve-26.6.2.tgz"
   "version" "26.6.2"
@@ -7319,6 +7307,11 @@
   "version" "4.2.0"
   dependencies:
     "lodash._reinterpolate" "^3.0.0"
+
+"lodash.throttle@^4.1.1":
+  "integrity" "sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ="
+  "resolved" "https://registry.npmjs.org/lodash.throttle/-/lodash.throttle-4.1.1.tgz"
+  "version" "4.1.1"
 
 "lodash.uniq@^4.5.0":
   "integrity" "sha1-0CJTc662Uq3BvILklFM5qEJ1R3M="
@@ -9470,6 +9463,11 @@
     "iconv-lite" "0.4.24"
     "unpipe" "1.0.0"
 
+"react-anchor-link-smooth-scroll@^1.0.12":
+  "integrity" "sha512-aaY+9X0yh8YnC0jBfoTKpsiCLdO/Y6pCltww+VB+NnTBPDOvnIdnp1AlazajsDitc1j+cVSQ+yNtaVeTIMQbxw=="
+  "resolved" "https://registry.npmjs.org/react-anchor-link-smooth-scroll/-/react-anchor-link-smooth-scroll-1.0.12.tgz"
+  "version" "1.0.12"
+
 "react-app-polyfill@^2.0.0":
   "integrity" "sha512-0sF4ny9v/B7s6aoehwze9vJNWcmCemAUYBVasscVr92+UYiEqDXOxfKjXN685mDaMRNF3WdhHQs76oTODMocFA=="
   "resolved" "https://registry.yarnpkg.com/react-app-polyfill/-/react-app-polyfill-2.0.0.tgz"
@@ -9512,7 +9510,7 @@
     "strip-ansi" "6.0.0"
     "text-table" "0.2.0"
 
-"react-dom@*", "react-dom@^17.0.1":
+"react-dom@*", "react-dom@^15.5.4 || ^16.0.0", "react-dom@^17.0.1":
   "integrity" "sha512-6eV150oJZ9U2t9svnsspTMrWNyHc6chX0KzDeAOXftRa8bNeOKTTfCJ7KorIwenkHd2xqVTBTCZd79yk/lx/Ug=="
   "resolved" "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.1.tgz"
   "version" "17.0.1"
@@ -9607,7 +9605,20 @@
   optionalDependencies:
     "fsevents" "^2.1.3"
 
-"react@*", "react@^17.0.1", "react@>= 16", "react@17.0.1":
+"react-scroll@^1.8.1":
+  "integrity" "sha512-UAKmawFHn+c7x/DoXuHqOsQ5xwNk2Dxv7vP8Ft41K2hglPWkshcSos0tMTr8704UkFqImoUGzMTdN4vuZXoqbw=="
+  "resolved" "https://registry.npmjs.org/react-scroll/-/react-scroll-1.8.1.tgz"
+  "version" "1.8.1"
+  dependencies:
+    "lodash.throttle" "^4.1.1"
+    "prop-types" "^15.7.2"
+
+"react-smooth-scrolling@^1.0.2":
+  "integrity" "sha512-AAkPQDLeVtLL92E0iyE86oj7ASSKE5L0mIqSeT19FXHT13/N+9Yxpf1VFKhN49BDJ60zE35nru0VjbDpmbDXNA=="
+  "resolved" "https://registry.npmjs.org/react-smooth-scrolling/-/react-smooth-scrolling-1.0.2.tgz"
+  "version" "1.0.2"
+
+"react@*", "react@^15.5.4 || ^16.0.0", "react@^16.13.1", "react@^17.0.1", "react@>= 16", "react@17.0.1":
   "integrity" "sha512-lG9c9UuMHdcAexXtigOZLX8exLWkW0Ku29qPRU8uhF2R9BN96dLCt0psvzPLlHc5OWkgymP3qwTRgbnw5BKx3w=="
   "resolved" "https://registry.yarnpkg.com/react/-/react-17.0.1.tgz"
   "version" "17.0.1"
@@ -10475,6 +10486,16 @@
     "ansi-styles" "^4.0.0"
     "astral-regex" "^2.0.0"
     "is-fullwidth-code-point" "^3.0.0"
+
+"smoothscroll-anchor-polyfill@^1.3.2":
+  "integrity" "sha512-1BGjXUuzGARUXlCFNuZ8rp3zy9/27bo5VmZ7QTJY+flm7AFblvuk9SqucPgqGVgwHryoXNPgMq8M3hm3LRDIJw=="
+  "resolved" "https://registry.npmjs.org/smoothscroll-anchor-polyfill/-/smoothscroll-anchor-polyfill-1.3.2.tgz"
+  "version" "1.3.2"
+
+"smoothscroll-polyfill@^0.4.4":
+  "integrity" "sha512-TK5ZA9U5RqCwMpfoMq/l1mrH0JAR7y7KRvOBx0n2869aLxch+gT9GhN3yUfjiw+d/DiF1mKo14+hd62JyMmoBg=="
+  "resolved" "https://registry.npmjs.org/smoothscroll-polyfill/-/smoothscroll-polyfill-0.4.4.tgz"
+  "version" "0.4.4"
 
 "snapdragon-node@^2.0.1":
   "integrity" "sha512-O27l4xaMYt/RSQ5TR3vpWCAB5Kb/czIcqUFOM/C4fYcLnbZUc1PkjTAMjof2pBWaSTwOUd6qUHcFGVGj7aIwnw=="

@@ -2,6 +2,11 @@
 @font-face { font-family: Virtuous; font-weight: bold; src: url('./fonts/Virtuous-Slab\ Bold.otf')}
 @font-face { font-family: HomemadeApple; src: url('./fonts/HomemadeApple-Regular.ttf')}
 
+html {
+  --scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
 html, body {
   background-color: #000;
   color: #fff;
@@ -48,6 +53,56 @@ a {
   width: 40px;
 }
 
+#navbar {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  width: 100vw;
+  height: 100px;
+  z-index: 2;
+  // background: rgba(200, 200, 200, 0.5);
+  #myName {
+    font-family: Virtuous;
+    font-weight: bold;
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: inherit;
+    position: absolute;
+    margin: 0;
+    padding-top: 2px;
+    top: 50%;
+    left: 4%;
+    transform: translateY(-50%);
+    text-transform: lowercase;
+    letter-spacing: 8px;
+  }
+
+  ul {
+    list-style: none;
+    font-size: 24px;
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    right: 4%;
+    transform: translateY(-50%);
+
+    li {
+      display: inline-block;
+      padding: 0 12px;
+    }
+
+    i {
+      display: inline-block;
+      transition: all 0.4s ease-in-out;
+    }
+    i:hover {
+      transform: rotate(360deg);
+    }
+    
+  }
+}
+
 #homepage {
   position: relative;
   height: 100vh;
@@ -56,53 +111,6 @@ a {
     position: absolute;
     z-index: 0;
     // height: 100%;
-  }
-
-  #navbar {
-    display: flex;
-    flex-direction: row;
-    position: fixed;
-    width: 100vw;
-    height: 100px;
-    z-index: 2;
-    // background: rgba(200, 200, 200, 0.5);
-    #myName {
-      font-family: Virtuous;
-      font-weight: bold;
-      font-size: 20px;
-      position: absolute;
-      margin: 0;
-      padding-top: 2px;
-      top: 50%;
-      left: 4%;
-      transform: translateY(-50%);
-      text-transform: lowercase;
-      letter-spacing: 8px;
-    }
-
-    ul {
-      list-style: none;
-      font-size: 24px;
-      position: absolute;
-      margin: 0;
-      top: 50%;
-      right: 4%;
-      transform: translateY(-50%);
-
-      li {
-        display: inline-block;
-        padding: 0 12px;
-      }
-
-      i {
-        display: inline-block;
-        transition: all 0.4s ease-in-out;
-      }
-      i:hover {
-        transform: rotate(360deg);
-      }
-      
-    }
   }
 
   #myOpening {
