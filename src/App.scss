@@ -263,23 +263,29 @@ a {
   and (device-width: 375px)
   and (device-height: 812px)
   and (-webkit-device-pixel-ratio: 3) {
+
     .cursor {
+      opacity: 0;
       height: 0px;
       width: 0px;
     }
     .cursors .cursor:nth-child(1) {
+      opacity: 0;
       height: 0px;
       width: 0px;
     }
     .cursors .cursor:nth-child(2) {
+      opacity: 0;
       height: 0px;
       width: 0px;
     }
     .cursor:nth-child(2).enlarged {
+      opacity: 0;
       height: 0px;
       width: 0px;
     }
     .cursor:nth-child(1).clicked {
+      opacity: 0;
       height: 0px;
       width: 0px;
     }
