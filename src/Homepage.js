@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import smoothscroll from 'smoothscroll-polyfill';
 import background_ink from './background_ink.mp4';
 
 class Homepage extends Component {
@@ -7,10 +6,9 @@ class Homepage extends Component {
         super(props);
         this.state = {
             // animate property for deciding how tot animate an element
-            animate: true 
+            animate: true,
+            clickActive: false
         }
-        this.myRef = React.createRef();
-        smoothscroll.polyfill();
     }
     DidMount() {
         // check for token (if page has loaded or not)
@@ -27,6 +25,24 @@ class Homepage extends Component {
             });
         }
     }
+    onNameClick = e => {
+        const github = document.getElementById('zethGithub');
+        const linkedIn = document.getElementById('zethLinkedIn');
+
+        if (!this.state.clickActive) {
+            github.classList.add('fade');
+            linkedIn.classList.add('fade');
+            this.setState({
+                clickActive: true
+            })
+        } else {
+            github.classList.remove('fade');
+            linkedIn.classList.remove('fade');
+            this.setState({
+                clickActive: false
+            })
+        }
+    }
         
     render() {
         return (
@@ -37,7 +53,24 @@ class Homepage extends Component {
                 </video>
                 {/* header text */}
                 <div id="myOpening" className={this.state.animate ? "slide-top": ""}>
-                    <h2>Hi,<br/> my name is <span>Zeth</span>,<br/>an aspiring <span>web developer</span>.</h2>
+                    <h2>
+                        Hi,
+                        <br/>
+                        my name is 
+                        <span>
+                            <button id="zethButton" onClick={this.onNameClick}>
+                                Zeth
+                            </button>
+                        </span>, &nbsp;
+                        <a href="https://github.com/zethdeluna" target="_blank" rel="noreferrer">
+                            <button id="zethGithub"><i class="fab fa-github-alt"></i></button>
+                        </a>
+                        <a href="https://www.linkedin.com/in/zethdeluna/" target="_blank" rel="noreferrer">
+                            <button id="zethLinkedIn"><i class="fab fa-linkedin-in"></i></button>
+                        </a>
+                        <br/>
+                        an aspiring <span>web developer</span>.
+                    </h2>
                 </div>
                 <div id="skills" className={this.state.animate ? "slide-left": ""}>
                     <h3>
