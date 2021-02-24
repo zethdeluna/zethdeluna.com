@@ -48,7 +48,7 @@ class Homepage extends Component {
         return (
             <div id="homepage">
                 {/* background video */}
-                <video id="bkgdVideo" autoPlay loop muted>
+                <video id="bkgdVideo" autoPlay playsInline loop muted>
                     <source src={background_ink} type="video/mp4" />
                 </video>
                 {/* header text */}
