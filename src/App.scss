@@ -59,6 +59,8 @@ a {
   width: 25px;
 }
 
+// END CURSOR STYLE
+
 // NAVIGATION STYLE
 
 #navbar {
@@ -110,6 +112,8 @@ a {
     
   }
 }
+
+// END NAVIGATION STYLE
 
 // HOMEPAGE STYLE
 
@@ -191,8 +195,11 @@ a {
     bottom: 8%;
     right: 8%;
   }
-
 }
+
+// END HOMEPAGE STYLE
+
+// FADE EFFECTS
 
 .fade-in {
     animation: fade 2.7s ease-in forwards;
@@ -247,3 +254,33 @@ a {
             transform: translateX(0);
   }
 }
+
+// END FADE EFFECTS
+
+// MEDIA QUERIES
+//IPHONE 11 PRO
+@media only screen
+  and (device-width: 375px)
+  and (device-height: 812px)
+  and (-webkit-device-pixel-ratio: 3) {
+    .cursor {
+      height: 0px;
+      width: 0px;
+    }
+    .cursors .cursor:nth-child(1) {
+      height: 0px;
+      width: 0px;
+    }
+    .cursors .cursor:nth-child(2) {
+      height: 0px;
+      width: 0px;
+    }
+    .cursor:nth-child(2).enlarged {
+      height: 0px;
+      width: 0px;
+    }
+    .cursor:nth-child(1).clicked {
+      height: 0px;
+      width: 0px;
+    }
+  }
