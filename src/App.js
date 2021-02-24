@@ -27,7 +27,7 @@ class App extends React.Component {
                   xTrailing: clientX,
                   yTrailing: clientY
               });
-          }, 120);
+          }, 100);
       })
   }
 
@@ -41,7 +41,7 @@ class App extends React.Component {
     
     // cursor effect on hover over links
     const cursor = document.querySelector('.cursor:nth-child(2)')
-    const links = document.querySelectorAll('a')
+    const links = document.querySelectorAll('a, button')
 
     links.forEach(link => {
       link.addEventListener('mouseenter', e => {
