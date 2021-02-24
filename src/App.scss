@@ -23,6 +23,8 @@ a {
   cursor: none;
 }
 
+// CUSTOM CURSOR STYLE
+
 .cursor {
   position: fixed;
   left: 0;
@@ -52,6 +54,8 @@ a {
   height: 40px;
   width: 40px;
 }
+
+// NAVIGATION STYLE
 
 #navbar {
   display: flex;
@@ -103,6 +107,8 @@ a {
   }
 }
 
+// HOMEPAGE STYLE
+
 #homepage {
   position: relative;
   height: 100vh;
@@ -115,11 +121,62 @@ a {
 
   #myOpening {
     font-size: 40px;
-    position: absolute;
+    position: relative;
+    display: flex;
     top: 25%;
     left: 12%;
-    span {
-      color: #ececa7;
+
+    h2 {
+      span {
+        color: #ececa7;
+      }
+      button {
+        font-size: inherit;
+        font-weight: inherit;
+        font-family: inherit;
+        color: inherit;
+        border: none;
+        background: none;
+        text-decoration: none;
+        // background-color: rgba(0, 0, 0, 0.4);
+      }
+      button:active {
+        color: inherit;
+      }
+      button:focus {
+        outline: none;
+      }
+
+      button > i {
+        pointer-events: none;
+        display: inline-block;
+        font-size: 44px;
+        padding: 0 18px;
+        transition: all 400ms ease-in-out;
+      }
+      button:hover > i {
+        transform: rotate(360deg);
+      }
+      
+
+      a,
+      #zethGithub,
+      #zethLinkedIn {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-160px);
+        transition: 
+          opacity 300ms ease,
+          visibility 300ms ease,
+          transform 400ms ease;
+      }
+      a,
+      #zethGithub.fade,
+      #zethLinkedIn.fade {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0px);
+      }
     }
   }
 
