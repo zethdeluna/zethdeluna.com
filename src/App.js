@@ -39,18 +39,28 @@ class App extends React.Component {
       yTrailing
     } = this.state;
     
-    // cursor effect on hover over links
-    const cursor = document.querySelector('.cursor:nth-child(2)')
-    const links = document.querySelectorAll('a, button')
+    const cursor = document.querySelector('.cursor:nth-child(2)');
+    const cursorClick = document.querySelector('.cursor:nth-child(1)');
+    const links = document.querySelectorAll('a, button');
 
+    // cursor effect on hover over links
     links.forEach(link => {
       link.addEventListener('mouseenter', e => {
-        cursor.classList.add('enlarged')
+        cursor.classList.add('enlarged');
       })
       link.addEventListener('mouseout', e => {
-        cursor.classList.remove('enlarged')
+        cursor.classList.remove('enlarged');
       })
     })
+
+    // cursor effect on mousedown/mouseup
+    window.onmousedown = () => {
+      cursorClick.classList.add('clicked');
+    }
+    window.onmouseup = () => {
+      cursorClick.classList.remove('clicked');
+    }
+
     return (
       <div className="App" onMouseMove={e => {this.handleMouseMove(e)}}>
         <div className="cursors">

@@ -34,8 +34,8 @@ a {
   width: 8px;
   border-radius: 50%;
   transition: 
-    width 400ms ease,
-    height 400ms ease;
+    width 300ms ease,
+    height 300ms ease;
 }
 .cursors .cursor:nth-child(1) {
   background-color: #ffe5eb;
@@ -51,8 +51,12 @@ a {
   transform: translate(-50%, -50%);
 }
 .cursor:nth-child(2).enlarged {
-  height: 40px;
-  width: 40px;
+  height: 48px;
+  width: 48px;
+}
+.cursor:nth-child(1).clicked {
+  height: 24px;
+  width: 24px;
 }
 
 // NAVIGATION STYLE
