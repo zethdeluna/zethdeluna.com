@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import background_ink from './background_ink.mp4';
+import background_ink from './images/background_ink.mp4';
 
 class Homepage extends Component {
     constructor(props) {
@@ -25,24 +25,7 @@ class Homepage extends Component {
             });
         }
     }
-    onNameClick = e => {
-        const github = document.getElementById('zethGithub');
-        const linkedIn = document.getElementById('zethLinkedIn');
-
-        if (!this.state.clickActive) {
-            github.classList.add('fade');
-            linkedIn.classList.add('fade');
-            this.setState({
-                clickActive: true
-            })
-        } else {
-            github.classList.remove('fade');
-            linkedIn.classList.remove('fade');
-            this.setState({
-                clickActive: false
-            })
-        }
-    }
+    
         
     render() {
         return (
@@ -56,23 +39,21 @@ class Homepage extends Component {
                     <h2>
                         Hi,
                         <br/>
-                        my name is 
-                        <span>
-                            <button id="zethButton" onClick={this.onNameClick}>
-                                Zeth
-                            </button>
-                        </span>, &nbsp;
-                        <a href="https://github.com/zethdeluna" target="_blank" rel="noreferrer">
-                            <button id="zethGithub"><i class="fab fa-github-alt"></i></button>
-                        </a>
-                        <a href="https://www.linkedin.com/in/zethdeluna/" target="_blank" rel="noreferrer">
-                            <button id="zethLinkedIn"><i class="fab fa-linkedin-in"></i></button>
-                        </a>
+                        my name is <span>Zeth</span>,
                         <br/>
-                        an aspiring <span>web developer</span>.
+                        born and raised in <span>Los Angeles</span>.
                     </h2>
                 </div>
-                <div id="skills" className={this.state.animate ? "slide-left": ""}>
+                <div id="homeDescription" className={this.state.animate ? "slide-left" : ""}>
+                    <h2>
+                        I am a <span>creative</span>
+                        <br/>
+                        aspiring <span>front-end developer</span>
+                        <br/>
+                        and <span>designer</span>.
+                    </h2>
+                </div>
+                {/* <div id="skills" className={this.state.animate ? "slide-left": ""}>
                     <h3>
                         &#60;div&#62;<br/>
                         &#160;&#160; html <br/>
@@ -81,7 +62,7 @@ class Homepage extends Component {
                         &#160;&#160; react <br/>
                         &#60;/div&#62;
                     </h3>
-                </div>
+                </div> */}
             </div>
         )
     }

@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 
-class Navbar extends Component {
+class Navigation extends Component {
     constructor(props) {
         super(props);
         this.state = {
             // animate property for deciding how tot animate an element
             animate: true 
         }
-        this.myRef = React.createRef();
     }
     DidMount() {
         // check for token (if page has loaded or not)
@@ -28,7 +27,7 @@ class Navbar extends Component {
         return (
             <div>
                 {/* navigation */}
-                <div id="navbar" className={this.state.animate ? "fade-in" : ""}>
+                <div id="navbar" className={this.state.animate ? "slide-top" : ""}>
                     <h1 id="myName"><a href="https://zethdeluna.com/">Zeth De Luna</a></h1>
                     {/* <button id="myName">Zeth De Luna</button> */}
                     <ul>
@@ -41,4 +40,4 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar
+export default Navigation
