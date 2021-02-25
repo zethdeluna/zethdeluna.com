@@ -1,74 +1,134 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.scss';
 import Homepage from './Homepage';
-import Navbar from './Navigation';
+import HomepageMobile from './HomepageMobile';
+import Navigation from './Navigation';
+import NavigationMobile from './NavigationMobile';
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
         // initial state for cursor position
-        xMain: 897.5,
-        yMain: 470.8,
-        xTrailing: 897.5,
-        yTrailing: 470.8
-    }
+        xMain: 400,
+        yMain: 400,
+        xTrailing: 400,
+        yTrailing: 400,
+        // initial state of window size
+        width: 0,
+    };
+    this.updateDimensions = this.updateDimensions.bind(this);
+    this.cursor = React.createRef();
+    this.cursorTrailing = React.createRef();
+    this.animationFrame = "null";
   }
-  // update cursor position on mouse move
-  handleMouseMove = (e) => {
-      const { clientX, clientY } = e;
 
-      this.setState({
-          xMain: clientX,
-          yMain: clientY
-      }, () => {
-          setTimeout(() => {
-              this.setState({
-                  xTrailing: clientX,
-                  yTrailing: clientY
-              });
-          }, 100);
-      })
+  componentDidMount() {
+    // window size
+    this.updateDimensions();
+    window.addEventListener("resize", this.updateDimensions);
+    // cursor
+    document.addEventListener("mousemove", this.onMouseMove);
+    this.moveCursor();
+  }
+  componentWillUnmount() {
+    // window size
+    window.removeEventListener("resize", this.updateDimensions);
+    // cursor
+    document.removeEventListener("mousemove", this.onMouseMove);
+    cancelAnimationFrame(this.animationFrame);
+  }
+  onMouseMove = (e) => {
+    const { clientX, clientY } = e;
+    this.setState({
+      xMain: clientX,
+      yMain: clientY,
+    });
+  }
+  moveCursor = () => {
+    const { xMain, yMain, xTrailing, yTrailing } = this.state;
+    const xDiff = xMain - xTrailing;
+    const yDiff = yMain - yTrailing;
+    // number in expression is coefficient of delay
+    this.setState({
+      xTrailing: xTrailing + xDiff / 6,
+      yTrailing: yTrailing + yDiff / 6,
+    },
+    () => {
+      // using refs and transform for better performance
+      if (this.cursor.current) {
+        this.cursor.current.style.transform = `translate3d(${xMain}px, ${yMain}px, 0) translate(-50%, -50%)`;
+        this.cursorTrailing.current.style.transform = `translate3d(${xTrailing}px, ${yTrailing}px, 0) translate(-50%, -50%)`;
+        this.animationFrame = requestAnimationFrame(this.moveCursor);
+      }
+    });
+  }
+
+  // track window size and update state
+  updateDimensions() {
+    let windowWidth = typeof window !== "undefined" ? window.innerWidth : 0;
+    this.setState({
+      width: windowWidth,
+    });
   }
 
   render() {
-    const {
-      xMain,
-      yMain,
-      xTrailing,
-      yTrailing
-    } = this.state;
-    
-    const cursor = document.querySelector('.cursor:nth-child(2)');
-    const cursorClick = document.querySelector('.cursor:nth-child(1)');
-    const links = document.querySelectorAll('a, button');
+    const width = this.state.width;
+    let navigation;
+    let homepage;
 
-    // cursor effect on hover over links
-    links.forEach(link => {
-      link.addEventListener('mouseenter', e => {
-        cursor.classList.add('enlarged');
-      })
-      link.addEventListener('mouseout', e => {
-        cursor.classList.remove('enlarged');
-      })
-    })
+    if (width < 780) {
+      navigation = (
+        <div>
+          <NavigationMobile/>
+        </div>
+      );
+      homepage = (
+        <div>
+          <HomepageMobile/>
+        </div>
+      );
+    } else {
+      const links = document.querySelectorAll('a, button, i');
 
-    // cursor effect on mousedown/mouseup
-    window.onmousedown = () => {
-      cursorClick.classList.add('clicked');
-    }
-    window.onmouseup = () => {
-      cursorClick.classList.remove('clicked');
+      // cursor effect on hover over links
+      links.forEach(link => {
+        link.addEventListener('mouseenter', e => {
+          this.cursorTrailing.current.classList.add('enlarged');
+        })
+        link.addEventListener('mouseout', e => {
+          this.cursorTrailing.current.classList.remove('enlarged');
+        })
+      })
+
+      // cursor effect on mousedown/mouseup
+      window.onmousedown = () => {
+        this.cursor.current.classList.add('clicked');
+      }
+      window.onmouseup = () => {
+        this.cursor.current.classList.remove('clicked');
+      }
+
+      navigation = (
+        <div>
+          <Navigation/>
+        </div>
+      )
+      homepage = (
+        <div>
+          <div className="cursors">
+            <div className="cursor fade-in" ref={this.cursor}/>
+            <div className="cursor fade-in" ref={this.cursorTrailing}/>
+          </div>
+          <Homepage/>
+        </div>
+      );
     }
 
     return (
-      <div className="App" onMouseMove={e => {this.handleMouseMove(e)}}>
-        <div className="cursors">
-          <div className="cursor fade-in" style={{left: xMain, top: yMain}}/>
-          <div className="cursor fade-in" style={{left: xTrailing, top: yTrailing}}/>
-        </div>
-          <Navbar/>
-          <Homepage/>
+      <div className="App">
+          {navigation}
+          {homepage}
       </div>
     )
   }
