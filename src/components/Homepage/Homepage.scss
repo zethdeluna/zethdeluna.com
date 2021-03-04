@@ -28,7 +28,7 @@
       h2 {
         animation: opening 1s linear;
         animation-play-state: paused;
-        animation-delay: calc(var(--scroll) * -4s);
+        animation-delay: calc(var(--scroll) * -12s);
         animation-iteration-count: 1;
         animation-fill-mode: both;
       
@@ -76,7 +76,7 @@
         padding-right: 5%;
         animation: opening2 1s linear;
         animation-play-state: paused;
-        animation-delay: calc(var(--scroll) * -4s);
+        animation-delay: calc(var(--scroll) * -12s);
         animation-iteration-count: 1;
         animation-fill-mode: both;
       }

@@ -31,7 +31,7 @@
         
         animation: about 1s linear;
         animation-play-state: paused;
-        animation-delay: calc(var(--scroll) * -4s);
+        animation-delay: calc(var(--scroll) * -10s);
         animation-iteration-count: 1;
         animation-fill-mode: both;
         @keyframes about {
@@ -58,7 +58,7 @@
 
         animation: about-text 1s linear;
         animation-play-state: paused;
-        animation-delay: calc(var(--scroll) * -3.4s);
+        animation-delay: calc(var(--scroll) * -9.4s);
         animation-iteration-count: 1;
         animation-fill-mode: both;
         @keyframes about-text {
@@ -129,31 +129,31 @@
 
     #interest1 {
         top: 0;
-        animation-delay: calc(var(--scroll) * -2s);
+        animation-delay: calc(var(--scroll) * -5s);
     }
     #interest2 {
         top: 120px;
-        animation-delay: calc(var(--scroll) * -2s), calc(var(--scroll) * -1.9s);
+        animation-delay: calc(var(--scroll) * -5s), calc(var(--scroll) * -4.9s);
     }
     #interest3 {
         top: 240px;
-        animation-delay: calc(var(--scroll) * -2s), calc(var(--scroll) * -1.8s);
+        animation-delay: calc(var(--scroll) * -5s), calc(var(--scroll) * -4.6s);
     }
     #interest4 {
         top: 360px;
-        animation-delay: calc(var(--scroll) * -2s), calc(var(--scroll) * -1.7s);
+        animation-delay: calc(var(--scroll) * -5s), calc(var(--scroll) * -4.4s);
     }
     #interest5 {
         top: 480px;
-        animation-delay: calc(var(--scroll) * -2s), calc(var(--scroll) * -1.6s);
+        animation-delay: calc(var(--scroll) * -5s), calc(var(--scroll) * -4.2s);
     }
     #interest6 {
         top: 600px;
-        animation-delay: calc(var(--scroll) * -2s), calc(var(--scroll) * -1.5s);
+        animation-delay: calc(var(--scroll) * -5s), calc(var(--scroll) * -4s);
     }
     #interest7 {
         top: 720px;
-        animation-delay: calc(var(--scroll) * -2s), calc(var(--scroll) * -1.45s);
+        animation-delay: calc(var(--scroll) * -5s), calc(var(--scroll) * -3.8s);
     }
 }
 

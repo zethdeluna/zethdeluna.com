@@ -25,7 +25,7 @@
 
         animation: projectsPage 1s linear;
         animation-play-state: paused;
-        animation-delay: calc(var(--scroll) * -1.8s);
+        animation-delay: calc(var(--scroll) * -4s);
         animation-iteration-count: 1;
         animation-fill-mode: both;
         @keyframes projectsPage {
@@ -69,7 +69,7 @@
 
         animation: projectsTitle 1s linear;
         animation-play-state: paused;
-        animation-delay: calc(var(--scroll) * -1.5s);
+        animation-delay: calc(var(--scroll) * -3.7s);
         animation-iteration-count: 1;
         animation-fill-mode: both;
         @keyframes projectsTitle {
@@ -103,7 +103,7 @@
             animation-duration: 1s;
             animation-timing-function: linear;
             animation-play-state: paused;
-            animation-delay: calc(var(--scroll) * -1.4s);
+            animation-delay: calc(var(--scroll) * -3.6s);
             animation-iteration-count: 1;
             animation-fill-mode: both;
             @keyframes descr1-scroll {
@@ -154,7 +154,7 @@
         animation-duration: 1s;
         animation-timing-function: linear;
         animation-play-state: paused;
-        animation-delay: calc(var(--scroll) * -1.5s);
+        animation-delay: calc(var(--scroll) * -3.7s);
         animation-iteration-count: 1;
         animation-fill-mode: both;
         @keyframes project-scroll {

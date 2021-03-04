@@ -12,7 +12,7 @@ function Projects() {
                     <br/><hr/>
                 </h2>
                 <span>
-                    I'm a self-taught web developer who is eager to learn!
+                    I'm a self-taught web developer who is eager to learn.
                     <br/>
                     Here are some projects that I worked on to help me 
                     <br/> 

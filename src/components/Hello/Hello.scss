@@ -25,14 +25,11 @@
         h2 {
             animation: hello 1s linear;
             animation-play-state: paused;
-            animation-delay: calc(var(--scroll) * -16s);
+            animation-delay: calc(var(--scroll) * -40s);
             animation-iteration-count: 1;
             animation-fill-mode: both;
             @keyframes hello {
                 0% {
-                    opacity: 1;
-                }
-                60% {
                     opacity: 1;
                 }
                 100% {
