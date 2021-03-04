@@ -1,67 +1,33 @@
 import React, { Component } from 'react';
 import './App.scss';
-import Homepage from './Homepage';
-import HomepageMobile from './HomepageMobile';
-import Navigation from './Navigation';
-import NavigationMobile from './NavigationMobile';
+import background_ink from './images/background_ink.mp4';
+import background_ink_LOW from './images/background_ink_LOW.mp4';
+import { 
+  Navigation, NavigationMobile, 
+  Hello, HelloMobile,
+  Homepage, HomepageMobile, 
+  About, AboutMobile,
+  Projects, ProjectsMobile } from './components';
+
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        // initial state for cursor position
-        xMain: 400,
-        yMain: 400,
-        xTrailing: 400,
-        yTrailing: 400,
         // initial state of window size
         width: 0,
     };
     this.updateDimensions = this.updateDimensions.bind(this);
-    this.cursor = React.createRef();
-    this.cursorTrailing = React.createRef();
-    this.animationFrame = "null";
   }
 
   componentDidMount() {
     // window size
     this.updateDimensions();
     window.addEventListener("resize", this.updateDimensions);
-    // cursor
-    document.addEventListener("mousemove", this.onMouseMove);
-    this.moveCursor();
   }
   componentWillUnmount() {
     // window size
     window.removeEventListener("resize", this.updateDimensions);
-    // cursor
-    document.removeEventListener("mousemove", this.onMouseMove);
-    cancelAnimationFrame(this.animationFrame);
-  }
-  onMouseMove = (e) => {
-    const { clientX, clientY } = e;
-    this.setState({
-      xMain: clientX,
-      yMain: clientY,
-    });
-  }
-  moveCursor = () => {
-    const { xMain, yMain, xTrailing, yTrailing } = this.state;
-    const xDiff = xMain - xTrailing;
-    const yDiff = yMain - yTrailing;
-    // number in expression is coefficient of delay
-    this.setState({
-      xTrailing: xTrailing + xDiff / 6,
-      yTrailing: yTrailing + yDiff / 6,
-    },
-    () => {
-      // using refs and transform for better performance
-      if (this.cursor.current) {
-        this.cursor.current.style.transform = `translate3d(${xMain}px, ${yMain}px, 0) translate(-50%, -50%)`;
-        this.cursorTrailing.current.style.transform = `translate3d(${xTrailing}px, ${yTrailing}px, 0) translate(-50%, -50%)`;
-        this.animationFrame = requestAnimationFrame(this.moveCursor);
-      }
-    });
   }
 
   // track window size and update state
@@ -73,62 +39,42 @@ class App extends Component {
   }
 
   render() {
+    // enable scroll effects
+    window.addEventListener("scroll", () => {
+      document.body.style.setProperty(
+          "--scroll",
+          window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
+      );
+    }, false);
     const width = this.state.width;
-    let navigation;
-    let homepage;
+    let background, navigation, hello, homepage, about, projects;
 
     if (width < 780) {
-      navigation = (
-        <div>
-          <NavigationMobile/>
-        </div>
-      );
-      homepage = (
-        <div>
-          <HomepageMobile/>
-        </div>
-      );
+      background = background_ink_LOW;
+      navigation = <div><NavigationMobile/></div>;
+      hello = <div><HelloMobile/></div>
+      homepage = <div><HomepageMobile/></div>;
+      about = <div><AboutMobile/></div>
+      projects = <div><ProjectsMobile/></div>
     } else {
-      const links = document.querySelectorAll('a, button, i');
-
-      // cursor effect on hover over links
-      links.forEach(link => {
-        link.addEventListener('mouseenter', e => {
-          this.cursorTrailing.current.classList.add('enlarged');
-        })
-        link.addEventListener('mouseout', e => {
-          this.cursorTrailing.current.classList.remove('enlarged');
-        })
-      })
-
-      // cursor effect on mousedown/mouseup
-      window.onmousedown = () => {
-        this.cursor.current.classList.add('clicked');
-      }
-      window.onmouseup = () => {
-        this.cursor.current.classList.remove('clicked');
-      }
-
-      navigation = (
-        <div>
-          <Navigation/>
-        </div>
-      )
-      homepage = (
-        <div>
-          <div className="cursors">
-            <div className="cursor fade-in" ref={this.cursor}/>
-            <div className="cursor fade-in" ref={this.cursorTrailing}/>
-          </div>
-          <Homepage/>
-        </div>
-      );
+      background = background_ink;
+      navigation = <div><Navigation/></div>;
+      hello = <div><Hello/></div>
+      homepage = <div><Homepage/></div>;
+      about = <div><About/></div>
+      projects = <div><Projects/></div>
     }
 
     return (
       <div className="App">
+          <video id="bkgdVideo" autoPlay playsInline loop muted>
+            <source src={background} type="video/mp4" />
+          </video>
           {navigation}
+          {hello}
           {homepage}
+          {about}
+          {projects}
       </div>
     )
   }

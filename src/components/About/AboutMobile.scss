@@ -1,0 +1,141 @@
+// 
+// About Mobile Page Style
+// 
+
+#aboutMobile {
+    z-index: 2;
+    display: flex;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    color: #3d3d3d;
+    padding-bottom: 100vh;
+
+    h2 {
+        font-size: 48px;
+    }
+
+    #mobAboutPage {
+        z-index: 2;
+        display: flex;
+        position: fixed;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #f5eaa8;
+
+        animation: aboutMobile 1s linear;
+        animation-play-state: paused;
+        animation-delay: calc(var(--scroll) * -4.5s);
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+        @keyframes aboutMobile {
+            0% {
+                transform: translateY(200vh);
+            }
+            100% {
+                transform: translateY(0vh);
+            }
+        }
+    }
+
+    #mobAboutText {
+        z-index: 3;
+        display: flex;
+        position: fixed;
+        justify-content: center;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+
+        animation: about-text-mobile 1s linear;
+        animation-play-state: paused;
+        animation-delay: calc(var(--scroll) * -4.5s);
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+        @keyframes about-text-mobile {
+            0% {
+                transform: translateY(300vh);
+            }
+            100% {
+                transform: translateY(5vh);
+            }
+        }
+    }
+
+    @keyframes scroll-up-mobile {
+        0% {
+            transform: translateY(300vh);
+        }
+        50% {
+            transform: translateY(160vh);
+        }
+        75% {
+            transform: translateY(90vh)
+        }
+        100% {
+            transform: translateY(20vh);
+        }
+    }
+
+    .mobInterest h2 {
+        margin: 0;
+        font-size: 40px;
+    }
+    .mobInterest {
+        z-index: 2;
+        display: flex;
+        position: fixed;
+        width: 100vw;
+        justify-content: center;
+
+        animation-name: scroll-up-mobile;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-play-state: paused;
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+    }
+
+    #mobInterest1 {
+        top: 2vh;
+        animation-delay: calc(var(--scroll) * -3s);
+    }
+    #mobInterest2 {
+        top: 12vh;
+        animation-delay: calc(var(--scroll) * -2.85s);
+    }
+    #mobInterest3 {
+        top: 22vh;
+        animation-delay: calc(var(--scroll) * -2.7s);
+    }
+    #mobInterest4 {
+        top: 32vh;
+        animation-delay: calc(var(--scroll) * -2.55s);
+    }
+    #mobInterest5 {
+        top: 42vh;
+        animation-delay: calc(var(--scroll) * -2.4s);
+    }
+    #mobInterest6 {
+        top: 52vh;
+        animation-delay: calc(var(--scroll) * -2.25s);
+    }
+    #mobInterest7 {
+        top: 62vh;
+        animation-delay: calc(var(--scroll) * -2.1s);
+    }
+}
+
+@media (max-width: 300px) {
+    #aboutMobile {
+        h2 {
+            font-size: 40px;
+        }
+        .mobInterest h2 {
+            font-size: 30px;
+        }
+    }
+}

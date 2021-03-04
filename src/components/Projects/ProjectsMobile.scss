@@ -1,0 +1,87 @@
+// 
+// Projects Page Mobile Style
+// 
+
+@font-face { font-family: "Exo2"; src: url('../../fonts/Exo2-ExtraBold.ttf')};
+
+#projectsMobileContainer {
+    z-index: 4;
+    display: flex;
+    position: relative;
+    width: 100vw;
+    height: 200vh;
+
+    h2 {
+        font-size: 48px;
+    }
+
+    #projectsMobile {
+        z-index: 4;
+        display: flex;
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #cfa1a4;
+
+        animation: projectsMobile 1s linear;
+        animation-play-state: paused;
+        animation-delay: calc(var(--scroll) * -1.5s);
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+        @keyframes projectsMobile {
+            0% {
+                transform: translateY(400vh);
+            }
+            100% {
+                transform: translateY(0vh);
+            }
+        }
+    }
+
+    #projectsTitleMobile {
+        z-index: 4;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        width: 100vw;
+        height: 50vw;
+        color: #3d3d3d;
+        background-color: #cfa1a4;
+
+        h2 {
+            margin-bottom: 1vh;
+
+            hr {
+                border: 1px solid #994e53;
+                border-radius: 2px;
+                width: 50%;
+            }
+        }
+
+        span {
+            font-size: 20px;
+            text-align: left;
+            line-height: 28px;
+            width: 80%;
+            // background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        animation: projectsTitleMobile 1s linear;
+        animation-play-state: paused;
+        animation-delay: calc(var(--scroll) * -1.2s);
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+        @keyframes projectsTitleMobile {
+            0% {
+                transform: translateY(500vh);
+            }
+            100% {
+                transform: translateY(-100vh);
+            }
+        }
+    }
+}

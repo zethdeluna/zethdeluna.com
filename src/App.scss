@@ -2,278 +2,40 @@
 @font-face { font-family: Virtuous; font-weight: bold; src: url('./fonts/Virtuous-Slab\ Bold.otf')}
 @font-face { font-family: HomemadeApple; src: url('./fonts/HomemadeApple-Regular.ttf')}
 
-html {
-  --scroll-behavior: smooth;
-  scroll-behavior: smooth;
-}
-
 html, body {
   background-color: #000;
   color: #fff;
   overflow-x: hidden;
+  min-height: 2000vh;
 }
 
-* {
-  cursor: none;
+@media (max-width: 800px) {
+  body {
+    min-height: 4000vh;
+  }
 }
 
 a {
   text-decoration: none;
   color: inherit;
-  cursor: none;
 }
 
-// CUSTOM CURSOR STYLE
-
-.cursor {
-  position: fixed;
-  left: 0;
-  top: 0;
-  pointer-events: none;
-  height: 8px;
-  width: 8px;
-  border-radius: 50%;
-  transition: 
-    width 300ms ease,
-    height 300ms ease,
-    opacity 400ms ease;
-}
-.cursors .cursor:nth-child(1) {
-  background-color: #ffe8ef;
-  z-index: 2401;
-  transform: translate(-50%, -50%);
-}
-.cursors .cursor:nth-child(2) {
-  height: 24px;
-  width: 24px;
-  border: 2px solid #ffe8ef;
-  border-radius: 50%;
-  z-index: 2400;
-  transform: translate(-50%, -50%);
-}
-.cursor:nth-child(2).enlarged {
-  height: 50px;
-  width: 50px;
-}
-.cursor:nth-child(1).clicked {
-  height: 25px;
-  width: 25px;
-}
-
-// END CURSOR STYLE
-
-// START NAVIGATION STYLE
-
-#navbar {
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  width: 100%;
-  height: 15%;
-  z-index: 2;
-  align-items: center;
-  // background: rgba(200, 200, 200, 0.5);
-  #myName {
-    font-family: Virtuous;
-    font-weight: bold;
-    font-size: 20px;
-    text-transform: lowercase;
-    letter-spacing: 8px;
-    display: flex;
-    position: relative;
-    align-items: center;
-    height: 100%;
-    width: 45%;
-    background: none;
-    border: none;
-    color: inherit;
-    margin: 0;
-    padding-top: 2px;
-    padding-left: 5%;
-    // background-color: rgba(255, 0, 0, 0.4);
-  }
-
-  ul {
-    list-style: none;
-    font-size: 24px;
-    display: flex;
-    position: relative;
-    height: 100%;
-    width: 50%;
-    margin: 0;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 5%;
-    // background-color: rgba(0, 0, 255, 0.4);
-
-    li {
-      display: inline-block;
-      padding: 0 12px;
-
-      i {
-        display: inline-block;
-        transition: all 0.4s ease-in-out;
-      }
-      i:hover {
-        transform: rotate(360deg);
-      }
-    }
-    
-  }
-}
-
-// END NAVIGATION STYLE
-
-// START MOBILE NAVIGATION
-
-#navbarMobile {
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  z-index: 2400;
-  width: 100%;
-  height: 8%;
-  // background-color: rgba(255, 255, 255, 0.4);
-
-  h1 {
-    font-family: Virtuous;
-    font-size: 12px;
-    text-transform: lowercase;
-    letter-spacing: 2px;
-    display: flex;
-    align-items: center;
-    height: 100%;
-    width: 45%;
-    padding-left: 5%;
-    margin: 0;
-    // background-color: rgba(255, 0, 0, 0.4);
-  }
-
-  ul {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-    width: 45%;
-    margin: 0;
-    padding-right: 5%;
-    align-items: center;
-    justify-content: flex-end;
-    // background-color: rgba(0, 255, 0, 0.4);
-
-    li {
-      padding: 0 4%;
-    }
-  }
-}
-
-// END MOBILE NAVIGATION
-
-// START HOMEPAGE STYLE
-
-#homepage {
-  position: relative;
-  height: 100vh;
+.App {
+  width: 100vw;
 
   #bkgdVideo {
-    position: absolute;
+    position: fixed;
     z-index: 0;
-    height: 120%;
-  }
-
-  span {
-    color: #ececa7;
-  }
-
-  #myOpening {
-    font-size: 40px;
-    position: relative;
-    display: flex;
-    width: 100%;
-    height: 70%;
-    padding-left: 5%;
-    align-items: center;
-    justify-content: flex-start;
-    // background-color: rgba(0, 0, 0, 0.4);
-  }
-
-  #homeDescription {
-    font-size: 20px;
-    position: relative;
-    display: flex;
-    width: 100%;
-    height: 30%;
-    align-items: center;
-    justify-content: flex-end;
-    // background-color: rgba(0, 255, 0, 0.4);
-
-    h2 {
-      padding-right: 5%;
-      // background-color: rgba(255, 0, 0, 0.4);
-    }
-  }
-
-  #skills {
-    font-family: HomemadeApple;
-    font-size: 14px;
-    position: absolute;
-    bottom: 8%;
-    right: 8%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
   }
 }
-
-// END HOMEPAGE STYLE
-
-// START MOBILE HOMEPAGE
-
-  #homepage-mobile {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-
-    #bkgd-mobile {
-      position: absolute;
-      height: 120%;
-      z-index: 0;
-    }
-
-    span {
-      color: #ececa7;
-    }
-
-    #mobileOpening {
-      position: relative;
-      width: 100%;
-      height: 60%;
-      padding-left: 5%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      line-height: 44px;
-      font-size: 26px;
-      font-weight: 200;
-      // background-color: rgba(255, 255, 255, 0.4);
-
-    }
-    #mobileHomeDescription {
-      position: relative;
-      width: 100%;
-      height: 40%;
-      padding-left: 5%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      // background-color: rgba(0, 255, 0, 0.4);
-    }
-  }
-
-// END MOBILE HOMEPAGE
 
 // FADE EFFECTS
 
 .fade-in {
-    animation: fade 1.2s ease-in forwards;
+    animation: fade 1.2s ease-in;
     opacity: 0;
 }
 

@@ -1,0 +1,84 @@
+// 
+// Hello Page Style
+// 
+
+// START HELLO PAGE
+
+#hello {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: rgba(255, 0, 0, 0.1);
+
+    #helloWord {
+        display: flex;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        font-size: 48px;
+        // background-color: rgba(240, 240, 0, 0.2);
+
+        h2 {
+            animation: hello 1s linear;
+            animation-play-state: paused;
+            animation-delay: calc(var(--scroll) * -16s);
+            animation-iteration-count: 1;
+            animation-fill-mode: both;
+            @keyframes hello {
+                0% {
+                    opacity: 1;
+                }
+                60% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    #helloScroll {
+        display: flex;
+        position: fixed;
+        bottom: 8vh;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        // background-color: rgba(0, 0, 240, 0.4);
+        animation: fade-out 1s linear;
+        animation-play-state: paused;
+        animation-delay: calc(var(--scroll) * -40s);
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+
+        @keyframes fade-out {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        span {
+            width: 24px;
+            height: 24px;
+            border-left: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            transform: rotate(-45deg);
+            animation: point-down 1s ease-in-out alternate infinite;
+        }
+        @keyframes point-down {
+            to {
+                transform: rotate(-45deg) translate(-15px, 15px);
+            }
+        }
+    }
+}
+  
+// END HELLO PAGE

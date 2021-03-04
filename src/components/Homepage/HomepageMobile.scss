@@ -1,0 +1,109 @@
+// 
+// Homepage Mobile Style
+// 
+
+#homepage-mobile {
+    position: relative;
+    height: 100vh;
+    padding-bottom: 200vh;
+    overflow: hidden;
+
+    span {
+        color: #ececa7;
+    }
+
+    #mobileOpening {
+        z-index: 2;
+        display: flex;
+        position: fixed;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100vw;
+        height: 60vh;
+        top: 0;
+        padding-left: 5%;
+        font-size: 26px;
+        // background-color: rgba(255, 255, 255, 0.4);
+
+        h2 {
+            animation: opening-mobile 1s linear;
+            animation-play-state: paused;
+            animation-delay: calc(var(--scroll) * -7.5s);
+            animation-iteration-count: 1;
+            animation-fill-mode: both;
+          
+            @keyframes opening-mobile {
+                0% {
+                    transform: translateY(100vh);
+                    opacity: 0;
+                }
+                50% {
+                    transform: translateY(0vh);
+                    opacity: 1;
+                }
+                80% {
+                    transform: translateY(0vh);
+                    opacity: 1;
+                }
+                95% {
+                    transform: translateX(-50vw) translateY(0vh);
+                }
+                100% {
+                    transform: translateX(-100vw);
+                    opacity: 0;
+                }
+            }
+        }
+    }
+    
+    #mobileHomeDescription {
+        z-index: 2;
+        display: flex;
+        position: fixed;
+        width: 100vw;
+        height: 40vh;
+        bottom: 6vh;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 17px;
+        // background-color: rgba(0, 255, 0, 0.4);
+
+        h2 {
+            padding-left: 5vw;
+            animation: opening2-mobile 1s linear;
+            animation-play-state: paused;
+            animation-delay: calc(var(--scroll) * -7.5s);
+            animation-iteration-count: 1;
+            animation-fill-mode: both;
+            @keyframes opening2-mobile {
+                0% {
+                transform: translateY(100vh);
+                opacity: 0;
+                }
+                50% {
+                transform: translateY(0vh);
+                opacity: 1;
+                }
+                80% {
+                transform: translateY(0vh);
+                opacity: 1;
+                }
+                100% {
+                transform: translateX(100vw);
+                opacity: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 300px) {
+    #homepage-mobile {
+        #mobileOpening {
+            font-size: 22px;
+        }
+        #mobileHomeDescription {
+            font-size: 14px;
+        }
+    }
+}

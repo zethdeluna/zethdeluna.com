@@ -1,0 +1,171 @@
+// 
+// Projects Page Style
+// 
+@font-face { font-family: "Exo2"; src: url('../../fonts/Exo2-ExtraBold.ttf')};
+
+#projectsContainer {
+    z-index: 4;
+    display: flex;
+    position: relative;
+    width: 100vw;
+    height: 200vh;
+
+    h2 {
+        font-size: 100px;
+    }
+
+    #projectsPage {
+        z-index: 4;
+        display: flex;
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #cfa1a4;
+
+        animation: projectsPage 1s linear;
+        animation-play-state: paused;
+        animation-delay: calc(var(--scroll) * -1.8s);
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+        @keyframes projectsPage {
+            0% {
+                transform: translateY(400vh);
+            }
+            100% {
+                transform: translateY(0vh);
+            }
+        }
+    }
+    #projectsTitle {
+        z-index: 4;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        width: 100vw;
+        height: 50vw;
+        justify-content: center;
+        color: #3d3d3d;
+        // color: #fff;
+        background-color: #cfa1a4;
+
+        h2 {
+            margin-bottom: 1vh;
+
+            hr {
+                border: 1px solid #994e53;
+                border-radius: 2px;
+                width: 50%;
+            }
+        }
+        span {
+            font-size: 20px;
+            text-align: center;
+            line-height: 28px;
+        }
+
+        animation: projectsTitle 1s linear;
+        animation-play-state: paused;
+        animation-delay: calc(var(--scroll) * -1.5s);
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+        @keyframes projectsTitle {
+            0% {
+                transform: translateY(500vh);
+            }
+            100% {
+                transform: translateY(-100vh);
+            }
+        }
+    }
+    
+    #project1Container {
+        z-index: 4;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+
+        img {
+            z-index: 5;
+            transform: rotate(15deg) scale(0.4);
+            -webkit-transform: rotate(15deg) scale(0.4);
+            filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.6));
+        }
+
+        span {
+            animation-name: descr1-scroll;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-play-state: paused;
+            animation-delay: calc(var(--scroll) * -1.4s);
+            animation-iteration-count: 1;
+            animation-fill-mode: both;
+            @keyframes descr1-scroll {
+                0% {
+                    transform: translateX(-3900px) translateY(-10vh);
+                    // -webkit-transform: translateX(-3900px) translateY(-10vh);
+                }
+                100% {
+                    transform: translateX(-200px) translateY(-10vh);
+                    // -webkit-transform: translateX(-200px) translateY(-10vh);
+                }
+            }
+
+            h3 {
+                width: 500px;
+                font-family: "Exo2";
+                font-size: 48px;
+                text-transform: uppercase;
+                color: #3d3d3d;
+                // color: #fff;
+                margin-bottom: 20px;
+                // background-color: rgba(0, 0, 0, 0.4);
+            }
+
+            p {
+                width: 420px;
+                font-size: 20px;
+                line-height: 25px;
+                color: #3d3d3d;
+                // color: #fff;
+            }
+
+            a {
+                font-size: 20px;
+                font-weight: 600;
+                color: #3d3d3d;
+                text-decoration: underline;
+                text-underline-offset: 4px;
+                transition: all 300ms ease;
+
+                &:hover {
+                    color: #994e53;
+                }
+            }
+        }
+
+        animation-name: project-scroll;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-play-state: paused;
+        animation-delay: calc(var(--scroll) * -1.5s);
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+        @keyframes project-scroll {
+            0% {
+                transform: translateX(-2600px) translateY(6vh);
+            }
+            100% {
+                transform: translateX(-350px) translateY(6vh);
+            }
+        }
+    }
+
+
+}
