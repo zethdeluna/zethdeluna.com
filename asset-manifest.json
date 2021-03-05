@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.a9807f6f.chunk.css",
-    "main.js": "/static/js/main.4d340103.chunk.js",
-    "main.js.map": "/static/js/main.4d340103.chunk.js.map",
+    "main.css": "/static/css/main.3c592806.chunk.css",
+    "main.js": "/static/js/main.4c76d13a.chunk.js",
+    "main.js.map": "/static/js/main.4c76d13a.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.3a4335cc.js",
     "runtime-main.js.map": "/static/js/runtime-main.3a4335cc.js.map",
     "static/js/2.4a6fdd59.chunk.js": "/static/js/2.4a6fdd59.chunk.js",
@@ -10,18 +10,17 @@
     "static/js/3.550bff5e.chunk.js": "/static/js/3.550bff5e.chunk.js",
     "static/js/3.550bff5e.chunk.js.map": "/static/js/3.550bff5e.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.a9807f6f.chunk.css.map": "/static/css/main.a9807f6f.chunk.css.map",
+    "static/css/main.3c592806.chunk.css.map": "/static/css/main.3c592806.chunk.css.map",
     "static/js/2.4a6fdd59.chunk.js.LICENSE.txt": "/static/js/2.4a6fdd59.chunk.js.LICENSE.txt",
-    "static/media/ProjectsMobile.scss": "/static/media/Exo2-ExtraBold.e24bea5f.ttf",
+    "static/media/ProjectsMobile.scss": "/static/media/bbth_iPhone.b9ac44e1.png",
     "static/media/App.scss": "/static/media/Virtuous-Slab.700afea4.otf",
-    "static/media/background_ink.5545ec11.mp4": "/static/media/background_ink.5545ec11.mp4",
-    "static/media/background_ink_LOW.ca7053da.mp4": "/static/media/background_ink_LOW.ca7053da.mp4",
-    "static/media/Projects.scss": "/static/media/bbth_iPhone.b9ac44e1.png"
+    "static/media/HelloMobile.scss": "/static/media/hello_zeth.993811a1.png",
+    "static/media/HomepageMobile.scss": "/static/media/homepage_zeth.80e8eff3.png"
   },
   "entrypoints": [
     "static/js/runtime-main.3a4335cc.js",
     "static/js/2.4a6fdd59.chunk.js",
-    "static/css/main.a9807f6f.chunk.css",
-    "static/js/main.4d340103.chunk.js"
+    "static/css/main.3c592806.chunk.css",
+    "static/js/main.4c76d13a.chunk.js"
   ]
 }
