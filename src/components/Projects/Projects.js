@@ -46,7 +46,7 @@ function Projects() {
                 scrub: true,
                 // markers: true
             },
-            x: "600px"
+            x: "45vw"
         })
     })
 

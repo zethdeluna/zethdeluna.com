@@ -105,3 +105,36 @@
         }
     }
 }
+@media (max-width: 1040px) {
+    #projectsContainer {
+        h2 {
+            font-size: 81px;
+        }
+        #projectsTitle span {
+            font-size: 16px;
+            line-height: 24px;
+        }
+        #project1Container {
+            span {
+                h3 {
+                    font-size: 42px;
+                }
+                p, a {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 915px) {
+    #projectsContainer {
+        h2 {
+            font-size: 72px;
+        }
+        #project1Container {
+            #img {
+                transform: rotate(15deg) translateX(-450px) scale(0.8);
+            }
+        }
+    }
+}

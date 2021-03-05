@@ -9,6 +9,7 @@ function Homepage() {
     const homepageRef = useRef();
     const openingRef = useRef();
     const descrRef = useRef();
+    const picRef = useRef();
 
     useEffect(() => {
         gsap.timeline({
@@ -20,9 +21,9 @@ function Homepage() {
                 // markers: true
             }
         })
-        .to([openingRef.current, descrRef.current], {opacity: 0.5})
-        .to([openingRef.current, descrRef.current], {opacity: 1})
-        .to([openingRef.current, descrRef.current], {opacity: 0})
+        .to([openingRef.current, descrRef.current, picRef.current], {opacity: 0.5})
+        .to([openingRef.current, descrRef.current, picRef.current], {opacity: 1})
+        .to([openingRef.current, descrRef.current, picRef.current], {opacity: 0})
     })
 
     return (
@@ -35,7 +36,8 @@ function Homepage() {
                     born and raised in <span>Los Angeles</span>.
                 </h2>
             </div>
-            <div id="homeDescription">
+            <div ref={picRef} id="homeDescription">
+                <div id="me"/>
                 <h2 ref={descrRef}>
                     I am a <span>creative</span>
                     <br/>

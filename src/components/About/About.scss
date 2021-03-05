@@ -44,3 +44,13 @@
     }
 
 }
+@media (max-width: 1040px) {
+    #aboutContainer {
+        #aboutTitle h1 {
+            font-size: 81px;
+        }
+        #aboutText h2 {
+            font-size: 70px;
+        }
+    }
+}

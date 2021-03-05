@@ -15,9 +15,9 @@
     #myOpening {
       display: flex;
       width: 100vw;
-      height: 60vh;
+      height: 40vh;
       padding-left: 5vw;
-      align-items: center;
+      align-items: flex-end;
       justify-content: flex-start;
       // background-color: rgba(0, 0, 0, 0.4);
 
@@ -29,16 +29,67 @@
   
     #homeDescription {
       display: flex;
+      flex-direction: row;
       width: 100vw;
-      height: 40vh;
-      // align-items: center;
-      justify-content: flex-end;
+      height: 60vh;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+      justify-content: space-evenly;
       // background-color: rgba(0, 255, 0, 0.4);
 
       h2 {
+        position: relative;
         opacity: 0;
         font-size: 40px;
         padding-right: 5vw;
+        white-space: nowrap;
+        // background-color: rgba(255, 0, 0, 0.4);
+      }
+
+      #me {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background-image: url('../../images/homepage_zeth.png');
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0px 0px 24px 8px rgba(0, 0, 0, 0.2);
+        // background-color: rgba(0, 0, 0, 0.4);
       }
     }
+}
+
+@media (max-width: 1160px) {
+  #homepage {
+    #myOpening h2 {
+      font-size: 56px;
+    }
+    #homeDescription {
+      h2 {
+        font-size: 36px;
+      }
+      #me {
+        width: 350px;
+        height: 350px;
+      }
+    }
+  }
+}
+@media (max-width: 975px) {
+  #homepage {
+    #myOpening h2 {
+      font-size: 52px;
+    }
+    #homeDescription {
+      h2 {
+        font-size: 28px;
+      }
+      #me {
+        width: 300px;
+        height: 300px
+      }
+    }
+  }
 }

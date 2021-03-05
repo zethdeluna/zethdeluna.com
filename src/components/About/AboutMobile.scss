@@ -2,140 +2,71 @@
 // About Mobile Page Style
 // 
 
-#aboutMobile {
-    z-index: 2;
+#aboutMobileContainer {
     display: flex;
+    flex-direction: column;
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 300vh;
     color: #3d3d3d;
-    padding-bottom: 100vh;
+    background-color: #f5eaa8;
 
-    h2 {
-        font-size: 48px;
-    }
-
-    #mobAboutPage {
-        z-index: 2;
+    #mobAboutTitle {
         display: flex;
-        position: fixed;
-        align-items: center;
-        justify-content: center;
-        top: 0;
         width: 100vw;
-        height: 100vh;
-        background-color: #f5eaa8;
+        height: 120vh;
+        justify-content: center;
+        align-items: center;
 
-        animation: aboutMobile 1s linear;
-        animation-play-state: paused;
-        animation-delay: calc(var(--scroll) * -4.5s);
-        animation-iteration-count: 1;
-        animation-fill-mode: both;
-        @keyframes aboutMobile {
-            0% {
-                transform: translateY(200vh);
-            }
-            100% {
-                transform: translateY(0vh);
-            }
+        h1 {
+            position: fixed;
+            top: 100vh;
+            font-size: 72px;
         }
     }
 
     #mobAboutText {
-        z-index: 3;
-        display: flex;
-        position: fixed;
-        justify-content: center;
-        top: 0;
-        width: 100vw;
-        height: 100vh;
-
-        animation: about-text-mobile 1s linear;
-        animation-play-state: paused;
-        animation-delay: calc(var(--scroll) * -4.5s);
-        animation-iteration-count: 1;
-        animation-fill-mode: both;
-        @keyframes about-text-mobile {
-            0% {
-                transform: translateY(300vh);
-            }
-            100% {
-                transform: translateY(5vh);
-            }
-        }
-    }
-
-    @keyframes scroll-up-mobile {
-        0% {
-            transform: translateY(300vh);
-        }
-        50% {
-            transform: translateY(160vh);
-        }
-        75% {
-            transform: translateY(90vh)
-        }
-        100% {
-            transform: translateY(20vh);
-        }
-    }
-
-    .mobInterest h2 {
-        margin: 0;
-        font-size: 40px;
-    }
-    .mobInterest {
         z-index: 2;
         display: flex;
-        position: fixed;
+        flex-direction: column;
         width: 100vw;
-        justify-content: center;
+        height: 100vh;
+        justify-content: space-evenly;
+        align-items: center;
 
-        animation-name: scroll-up-mobile;
-        animation-duration: 1s;
-        animation-timing-function: linear;
-        animation-play-state: paused;
-        animation-iteration-count: 1;
-        animation-fill-mode: both;
-    }
-
-    #mobInterest1 {
-        top: 2vh;
-        animation-delay: calc(var(--scroll) * -3s);
-    }
-    #mobInterest2 {
-        top: 12vh;
-        animation-delay: calc(var(--scroll) * -2.85s);
-    }
-    #mobInterest3 {
-        top: 22vh;
-        animation-delay: calc(var(--scroll) * -2.7s);
-    }
-    #mobInterest4 {
-        top: 32vh;
-        animation-delay: calc(var(--scroll) * -2.55s);
-    }
-    #mobInterest5 {
-        top: 42vh;
-        animation-delay: calc(var(--scroll) * -2.4s);
-    }
-    #mobInterest6 {
-        top: 52vh;
-        animation-delay: calc(var(--scroll) * -2.25s);
-    }
-    #mobInterest7 {
-        top: 62vh;
-        animation-delay: calc(var(--scroll) * -2.1s);
+        h2 {
+            font-size: 48px;
+            margin: 0;
+            opacity: 0;
+        }
     }
 }
 
+// MEDIA QUERIES
+@media (max-width: 600px) {
+    #aboutMobileContainer {
+        #mobAboutTitle h1 {
+            font-size: 54px;
+        }
+    }
+}
+@media (max-width: 400px) {
+    #aboutMobileContainer {
+        #mobAboutTitle h1 {
+            font-size: 50px;
+        }
+        #mobAboutText h2 {
+            font-size: 36px;
+        }
+    }
+}
 @media (max-width: 300px) {
-    #aboutMobile {
-        h2 {
+    #aboutMobileContainer {
+        #mobAboutTitle h1 {
             font-size: 40px;
         }
-        .mobInterest h2 {
-            font-size: 30px;
+        #mobAboutText h2 {
+            font-size: 28px;
         }
     }
 }

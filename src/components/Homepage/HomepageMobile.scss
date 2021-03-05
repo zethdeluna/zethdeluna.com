@@ -2,108 +2,103 @@
 // Homepage Mobile Style
 // 
 
-#homepage-mobile {
+#homepageMobile {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
     height: 100vh;
-    padding-bottom: 200vh;
-    overflow: hidden;
 
     span {
         color: #ececa7;
     }
 
     #mobileOpening {
-        z-index: 2;
         display: flex;
-        position: fixed;
-        align-items: center;
-        justify-content: flex-start;
         width: 100vw;
-        height: 60vh;
-        top: 0;
-        padding-left: 5%;
-        font-size: 26px;
+        align-items: center;
+        justify-content: center;
         // background-color: rgba(255, 255, 255, 0.4);
 
         h2 {
-            animation: opening-mobile 1s linear;
-            animation-play-state: paused;
-            animation-delay: calc(var(--scroll) * -7.5s);
-            animation-iteration-count: 1;
-            animation-fill-mode: both;
-          
-            @keyframes opening-mobile {
-                0% {
-                    transform: translateY(100vh);
-                    opacity: 0;
-                }
-                50% {
-                    transform: translateY(0vh);
-                    opacity: 1;
-                }
-                80% {
-                    transform: translateY(0vh);
-                    opacity: 1;
-                }
-                95% {
-                    transform: translateX(-50vw) translateY(0vh);
-                }
-                100% {
-                    transform: translateX(-100vw);
-                    opacity: 0;
-                }
-            }
+            opacity: 0;
+            font-size: 48px;
         }
     }
     
+    #meMobile {
+        position: relative;
+        width: 456px;
+        height: 456px;
+        border-radius: 50%;
+        background-image: url('../../images/homepage_zeth.png');
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0px 0px 24px 8px rgba(0, 0, 0, 0.2);
+    }
+
     #mobileHomeDescription {
-        z-index: 2;
         display: flex;
-        position: fixed;
         width: 100vw;
-        height: 40vh;
-        bottom: 6vh;
+        margin: 0;
+        padding: 0;
         align-items: center;
-        justify-content: flex-start;
-        font-size: 17px;
+        justify-content: space-evenly;
         // background-color: rgba(0, 255, 0, 0.4);
 
         h2 {
-            padding-left: 5vw;
-            animation: opening2-mobile 1s linear;
-            animation-play-state: paused;
-            animation-delay: calc(var(--scroll) * -7.5s);
-            animation-iteration-count: 1;
-            animation-fill-mode: both;
-            @keyframes opening2-mobile {
-                0% {
-                transform: translateY(100vh);
-                opacity: 0;
-                }
-                50% {
-                transform: translateY(0vh);
-                opacity: 1;
-                }
-                80% {
-                transform: translateY(0vh);
-                opacity: 1;
-                }
-                100% {
-                transform: translateX(100vw);
-                opacity: 0;
-                }
-            }
+            position: relative;
+            opacity: 0;
+            font-size: 36px;
+            white-space: nowrap;
         }
+
+        
     }
 }
 
-@media (max-width: 300px) {
-    #homepage-mobile {
-        #mobileOpening {
-            font-size: 22px;
+// MEDIA QUERIES
+@media (max-width: 600px) {
+    #homepageMobile {
+        #mobileOpening h2 {
+            font-size: 30px;
         }
-        #mobileHomeDescription {
-            font-size: 14px;
+        #mobileHomeDescription h2 {
+            font-size: 24px;
+        }
+        #meMobile {
+            width: 360px;
+            height: 360px;
+        }
+    }
+}
+@media (max-width: 400px) {
+    #homepageMobile {
+        #mobileOpening h2 {
+            font-size: 30px;
+        }
+        #mobileHomeDescription h2 {
+            font-size: 24px;
+        }
+        #meMobile {
+            width: 320px;
+            height: 320px;
+        }
+    }
+}
+@media (max-width: 300px) {
+    #homepageMobile {
+        #mobileOpening h2 {
+            font-size: 26px;
+        }
+        #mobileHomeDescription h2 {
+            font-size: 18px;
+        }
+        #meMobile {
+            width: 225px;
+            height: 225px;
         }
     }
 }

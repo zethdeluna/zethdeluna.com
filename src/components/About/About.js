@@ -53,17 +53,18 @@ function About() {
     return (
         <div ref={aboutRef} id="aboutContainer">
             <div id="aboutTitle">
-                <h1 ref={titleRef}>What I Love</h1>
+                <h1 ref={titleRef}>Things I Love</h1>
             </div>
             <div ref={textRef} id="aboutText">
                 <h2 className="interest">Web Design / Dev.</h2>
                 <h2 className="interest">UX / UI</h2>
                 <h2 className="interest">Physics</h2>
-                <h2 className="interest">Self-Improvement</h2>
+                <h2 className="interest">Movies</h2>
                 <h2 className="interest">Los Angeles Lakers</h2>
                 <h2 className="interest">Food</h2>
                 <h2 className="interest">The Ocean</h2>
-                <h2 className="interest">&nbsp;<br/>&nbsp;</h2>
+                <h2 className="interest">Dwayne Johnson</h2>
+                <h2 className="interest">&nbsp;</h2>
                 <h2 className="interest"><i className="fas fa-long-arrow-alt-down"></i></h2>
             </div>
         </div>

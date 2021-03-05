@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import './App.scss';
-import background_ink from './images/background_ink.mp4';
-import background_ink_LOW from './images/background_ink_LOW.mp4';
 import { 
   Navigation, NavigationMobile, 
   Hello, HelloMobile,
@@ -40,17 +38,15 @@ class App extends Component {
 
   render() {
     const width = this.state.width;
-    let background, navigation, hello, homepage, about, projects;
+    let navigation, hello, homepage, about, projects;
 
     if (width < 780) {
-      background = background_ink_LOW;
       navigation = <div><NavigationMobile/></div>;
       hello = <div><HelloMobile/></div>
       homepage = <div><HomepageMobile/></div>;
       about = <div><AboutMobile/></div>
       projects = <div><ProjectsMobile/></div>
     } else {
-      background = background_ink;
       navigation = <div><Navigation/></div>;
       hello = <div><Hello/></div>
       homepage = <div><Homepage/></div>;
@@ -60,9 +56,6 @@ class App extends Component {
 
     return (
       <div className="App">
-          <video id="bkgdVideo" autoPlay playsInline loop muted>
-            <source src={background} type="video/mp4" />
-          </video>
           {navigation}
           {hello}
           {homepage}
