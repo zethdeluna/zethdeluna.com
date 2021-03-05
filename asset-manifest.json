@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.3fe39bea.chunk.css",
-    "main.js": "/static/js/main.4ce90617.chunk.js",
-    "main.js.map": "/static/js/main.4ce90617.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.e93c98b2.js",
-    "runtime-main.js.map": "/static/js/runtime-main.e93c98b2.js.map",
-    "static/js/2.07d6d1ed.chunk.js": "/static/js/2.07d6d1ed.chunk.js",
-    "static/js/2.07d6d1ed.chunk.js.map": "/static/js/2.07d6d1ed.chunk.js.map",
-    "static/js/3.1d08a39c.chunk.js": "/static/js/3.1d08a39c.chunk.js",
-    "static/js/3.1d08a39c.chunk.js.map": "/static/js/3.1d08a39c.chunk.js.map",
+    "main.css": "/static/css/main.a9807f6f.chunk.css",
+    "main.js": "/static/js/main.4d340103.chunk.js",
+    "main.js.map": "/static/js/main.4d340103.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.3a4335cc.js",
+    "runtime-main.js.map": "/static/js/runtime-main.3a4335cc.js.map",
+    "static/js/2.4a6fdd59.chunk.js": "/static/js/2.4a6fdd59.chunk.js",
+    "static/js/2.4a6fdd59.chunk.js.map": "/static/js/2.4a6fdd59.chunk.js.map",
+    "static/js/3.550bff5e.chunk.js": "/static/js/3.550bff5e.chunk.js",
+    "static/js/3.550bff5e.chunk.js.map": "/static/js/3.550bff5e.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.3fe39bea.chunk.css.map": "/static/css/main.3fe39bea.chunk.css.map",
-    "static/js/2.07d6d1ed.chunk.js.LICENSE.txt": "/static/js/2.07d6d1ed.chunk.js.LICENSE.txt",
+    "static/css/main.a9807f6f.chunk.css.map": "/static/css/main.a9807f6f.chunk.css.map",
+    "static/js/2.4a6fdd59.chunk.js.LICENSE.txt": "/static/js/2.4a6fdd59.chunk.js.LICENSE.txt",
     "static/media/ProjectsMobile.scss": "/static/media/Exo2-ExtraBold.e24bea5f.ttf",
     "static/media/App.scss": "/static/media/Virtuous-Slab.700afea4.otf",
     "static/media/background_ink.5545ec11.mp4": "/static/media/background_ink.5545ec11.mp4",
     "static/media/background_ink_LOW.ca7053da.mp4": "/static/media/background_ink_LOW.ca7053da.mp4",
-    "static/media/bbth_iPhone.1b2056b5.png": "/static/media/bbth_iPhone.1b2056b5.png"
+    "static/media/Projects.scss": "/static/media/bbth_iPhone.b9ac44e1.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.e93c98b2.js",
-    "static/js/2.07d6d1ed.chunk.js",
-    "static/css/main.3fe39bea.chunk.css",
-    "static/js/main.4ce90617.chunk.js"
+    "static/js/runtime-main.3a4335cc.js",
+    "static/js/2.4a6fdd59.chunk.js",
+    "static/css/main.a9807f6f.chunk.css",
+    "static/js/main.4d340103.chunk.js"
   ]
 }
