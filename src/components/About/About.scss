@@ -3,165 +3,44 @@
 // 
 
 #aboutContainer {
-    z-index: 2;
     display: flex;
+    flex-direction: column;
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 300vh;
     color: #3d3d3d;
     // color: #ececa7;
-    padding-bottom: 100vh;
+    background-color: #f5eaa8;
 
-    h2 {
-        font-size: 100px;
-        // margin: 0;
-    }
-
-    #aboutPage {
-        z-index: 2;
+    #aboutTitle {
         display: flex;
-        position: fixed;
-        top: 0;
         width: 100vw;
-        height: 100vh;
+        height: 120vh;
         justify-content: center;
         align-items: center;
-        background-color: #f5eaa8;
-        // background-color: #242424;
-        
-        animation: about 1s linear;
-        animation-play-state: paused;
-        animation-delay: calc(var(--scroll) * -10s);
-        animation-iteration-count: 1;
-        animation-fill-mode: both;
-        @keyframes about {
-            0% {
-                transform: translateY(200vh);
-            }
-            60% {
-                transform: translateY(200vh);
-            }
-            100% {
-                transform: translateY(0vh);
-            }
+        h1 {
+            position: fixed;
+            top: 100vh;
+            font-size: 100px;
+            // margin: 0;
         }
     }
 
     #aboutText {
+        // background-color: rgba(0, 0, 240, 0.4);
         z-index: 2;
         display: flex;
-        position: fixed;
-        top: 0;
+        flex-direction: column;
         width: 100vw;
         height: 100vh;
-        justify-content: center;
-
-        animation: about-text 1s linear;
-        animation-play-state: paused;
-        animation-delay: calc(var(--scroll) * -9.4s);
-        animation-iteration-count: 1;
-        animation-fill-mode: both;
-        @keyframes about-text {
-            0% {
-                transform: translateY(250vh);
-            }
-            60% {
-                transform: translateY(250vh);
-            }
-            100% {
-                transform: translateY(0vh);
-            }
-        }
-
+        justify-content: space-evenly;
+        align-items: center;
+        
         h2 {
-            transform: rotate(-90deg) translateY(-20vw);
-        }
-    }
-
-    @keyframes scroll-up {
-        0% {
-            transform: translateY(300vh);
-        }
-        100% {
-            transform: translateY(-110vh);
-        }
-    }
-    @keyframes fade-on-scroll {
-        0% {
-            opacity: 0;
-        }
-        50% {
-            opacity: 0;
-        }
-        60% {
-            opacity: 1;
-        }
-        68% {
-            opacity: 1;
-        }
-        75% {
-            opacity: 0;
-        }
-        100% {
+            font-size: 81px;
+            margin: 0;
             opacity: 0;
         }
     }
 
-    .interest h2 {
-        margin: 0;
-    }
-
-    .interest {
-        z-index: 2;
-        display: flex;
-        position: fixed;
-        width: 100vw;
-        justify-content: center;
-        // background-color: rgba(0, 0, 0, 0.4);
-
-        animation-name: scroll-up, fade-on-scroll;
-        animation-duration: 1s;
-        animation-timing-function: linear;
-        animation-play-state: paused;
-        animation-iteration-count: 1;
-        animation-fill-mode: both;
-    }
-
-    #interest1 {
-        top: 0;
-        animation-delay: calc(var(--scroll) * -5s);
-    }
-    #interest2 {
-        top: 120px;
-        animation-delay: calc(var(--scroll) * -5s), calc(var(--scroll) * -4.9s);
-    }
-    #interest3 {
-        top: 240px;
-        animation-delay: calc(var(--scroll) * -5s), calc(var(--scroll) * -4.6s);
-    }
-    #interest4 {
-        top: 360px;
-        animation-delay: calc(var(--scroll) * -5s), calc(var(--scroll) * -4.4s);
-    }
-    #interest5 {
-        top: 480px;
-        animation-delay: calc(var(--scroll) * -5s), calc(var(--scroll) * -4.2s);
-    }
-    #interest6 {
-        top: 600px;
-        animation-delay: calc(var(--scroll) * -5s), calc(var(--scroll) * -4s);
-    }
-    #interest7 {
-        top: 720px;
-        animation-delay: calc(var(--scroll) * -5s), calc(var(--scroll) * -3.8s);
-    }
-}
-
-.empty {
-    z-index: 1;
-    display: flex;
-    position: relative;
-    width: 100vw;
-    height: 400vh;
-    // background-color: #fff;
 }

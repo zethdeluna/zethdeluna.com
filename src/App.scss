@@ -6,12 +6,12 @@ html, body {
   background-color: #000;
   color: #fff;
   overflow-x: hidden;
-  min-height: 2000vh;
+  // max-height: 860vh;
 }
 
 @media (max-width: 800px) {
   body {
-    min-height: 4000vh;
+    min-height: 2000vh;
   }
 }
 
@@ -44,7 +44,7 @@ a {
       opacity: 0.01;
     }
     100% {
-        opacity: 0.8;
+        opacity: 1;
     }
 }
 

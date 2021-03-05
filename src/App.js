@@ -39,13 +39,6 @@ class App extends Component {
   }
 
   render() {
-    // enable scroll effects
-    window.addEventListener("scroll", () => {
-      document.body.style.setProperty(
-          "--scroll",
-          window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
-      );
-    }, false);
     const width = this.state.width;
     let background, navigation, hello, homepage, about, projects;
 

@@ -4,106 +4,41 @@
 
 #homepage {
     position: relative;
+    width: 100vw;
     height: 100vh;
-    overflow: hidden;
-    padding-bottom: 200vh;
+    // background-color: rgba(201, 160, 160, 0.4);
   
     span {
       color: #ececa7;
     }
   
     #myOpening {
-      z-index: 2;
-      font-size: 40px;
-      position: fixed;
       display: flex;
       width: 100vw;
-      height: 70%;
+      height: 60vh;
       padding-left: 5vw;
-      top: 0;
       align-items: center;
       justify-content: flex-start;
       // background-color: rgba(0, 0, 0, 0.4);
 
       h2 {
-        animation: opening 1s linear;
-        animation-play-state: paused;
-        animation-delay: calc(var(--scroll) * -12s);
-        animation-iteration-count: 1;
-        animation-fill-mode: both;
-      
-        @keyframes opening {
-          0% {
-            transform: translateY(100vh);
-            opacity: 0;
-          }
-          40% {
-            transform: translateY(50vh);
-            opacity: 0;
-          }
-          60% {
-            transform: translateY(0vh);
-            opacity: 1;
-          }
-          80% {
-            transform: translateY(0vh);
-            opacity: 1;
-          }
-          95% {
-            transform: translateX(-50vw) translateY(0vh);
-          }
-          100% {
-            transform: translateX(-100vw);
-            opacity: 0;
-          }
-        }
+        opacity: 0;
+        font-size: 64px;
       }
     }
   
     #homeDescription {
-      z-index: 2;
-      font-size: 24px;
-      position: fixed;
       display: flex;
       width: 100vw;
-      height: 30vh;
-      bottom: 5vh;
-      align-items: center;
+      height: 40vh;
+      // align-items: center;
       justify-content: flex-end;
       // background-color: rgba(0, 255, 0, 0.4);
-  
+
       h2 {
-        padding-right: 5%;
-        animation: opening2 1s linear;
-        animation-play-state: paused;
-        animation-delay: calc(var(--scroll) * -12s);
-        animation-iteration-count: 1;
-        animation-fill-mode: both;
-      }
-      @keyframes opening2 {
-        0% {
-          transform: translateY(100vh);
-          opacity: 0;
-        }
-        40% {
-          transform: translateY(50vh);
-          opacity: 0;
-        }
-        60% {
-          transform: translateY(0vh);
-          opacity: 1;
-        }
-        80% {
-          transform: translateY(0vh);
-          opacity: 1;
-        }
-        95% {
-          transform: translateX(50vw) translateY(0vh);
-        }
-        100% {
-          transform: translateX(100vw);
-          opacity: 0;
-        }
+        opacity: 0;
+        font-size: 40px;
+        padding-right: 5vw;
       }
     }
 }

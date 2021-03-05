@@ -6,51 +6,30 @@
 #projectsContainer {
     z-index: 4;
     display: flex;
+    flex-direction: column;
     position: relative;
     width: 100vw;
-    height: 200vh;
+    height: 400vh;
+    top: -20vh;
+    background-color: #cfa1a4;
 
     h2 {
         font-size: 100px;
     }
 
-    #projectsPage {
-        z-index: 4;
-        display: flex;
-        position: fixed;
-        top: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: #cfa1a4;
-
-        animation: projectsPage 1s linear;
-        animation-play-state: paused;
-        animation-delay: calc(var(--scroll) * -4s);
-        animation-iteration-count: 1;
-        animation-fill-mode: both;
-        @keyframes projectsPage {
-            0% {
-                transform: translateY(400vh);
-            }
-            100% {
-                transform: translateY(0vh);
-            }
-        }
-    }
     #projectsTitle {
         z-index: 4;
         display: flex;
         flex-direction: column;
-        position: fixed;
         align-items: center;
-        justify-content: center;
-        top: 0;
+        // justify-content: center;
+        top: 100vh;
         width: 100vw;
-        height: 50vw;
-        justify-content: center;
+        height: 100vh;
         color: #3d3d3d;
+        position: fixed;
         // color: #fff;
-        background-color: #cfa1a4;
+        // background-color: #cfa1a4;
 
         h2 {
             margin-bottom: 1vh;
@@ -66,56 +45,30 @@
             text-align: center;
             line-height: 28px;
         }
-
-        animation: projectsTitle 1s linear;
-        animation-play-state: paused;
-        animation-delay: calc(var(--scroll) * -3.7s);
-        animation-iteration-count: 1;
-        animation-fill-mode: both;
-        @keyframes projectsTitle {
-            0% {
-                transform: translateY(500vh);
-            }
-            100% {
-                transform: translateY(-100vh);
-            }
-        }
     }
     
     #project1Container {
         z-index: 4;
         display: flex;
         align-items: center;
-        position: fixed;
-        top: 0;
         width: 100vw;
         height: 100vh;
 
-        img {
+        #img {
             z-index: 5;
-            transform: rotate(15deg) scale(0.4);
-            -webkit-transform: rotate(15deg) scale(0.4);
-            filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.6));
+            position: fixed;
+            bottom: -10vh;
+            width: 400px;
+            height: 710px;
+            background-image: url('../../images/bbth_iPhone.png');
+            transform: rotate(15deg) translateX(-450px);
         }
 
         span {
-            animation-name: descr1-scroll;
-            animation-duration: 1s;
-            animation-timing-function: linear;
-            animation-play-state: paused;
-            animation-delay: calc(var(--scroll) * -3.6s);
-            animation-iteration-count: 1;
-            animation-fill-mode: both;
-            @keyframes descr1-scroll {
-                0% {
-                    transform: translateX(-3900px) translateY(-10vh);
-                    // -webkit-transform: translateX(-3900px) translateY(-10vh);
-                }
-                100% {
-                    transform: translateX(-200px) translateY(-10vh);
-                    // -webkit-transform: translateX(-200px) translateY(-10vh);
-                }
-            }
+            position: fixed;
+            top: 50%;
+            transform: translateX(-500px) translateY(-50%);
+            // background-color: rgba(0, 0, 0, 0.4);
 
             h3 {
                 width: 500px;
@@ -124,6 +77,7 @@
                 text-transform: uppercase;
                 color: #3d3d3d;
                 // color: #fff;
+                margin-top: 0;
                 margin-bottom: 20px;
                 // background-color: rgba(0, 0, 0, 0.4);
             }
@@ -149,23 +103,5 @@
                 }
             }
         }
-
-        animation-name: project-scroll;
-        animation-duration: 1s;
-        animation-timing-function: linear;
-        animation-play-state: paused;
-        animation-delay: calc(var(--scroll) * -3.7s);
-        animation-iteration-count: 1;
-        animation-fill-mode: both;
-        @keyframes project-scroll {
-            0% {
-                transform: translateX(-2600px) translateY(6vh);
-            }
-            100% {
-                transform: translateX(-350px) translateY(6vh);
-            }
-        }
     }
-
-
 }

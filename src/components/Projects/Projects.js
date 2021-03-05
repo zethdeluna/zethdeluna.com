@@ -1,12 +1,58 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import './Projects.scss';
-import bbth_iPhone from '../../images/bbth_iPhone.png';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Projects() {
+    const projectsRef = useRef();
+    const projectsTitleRef = useRef();
+    const phoneRef = useRef();
+    const bbthRef = useRef();
+
+    useEffect(() => {
+        // scrolls up Project Page Intro
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: projectsRef.current,
+                start: "-5% bottom",
+                end: "15% top",
+                scrub: true,
+                // markers: true
+            }
+        })
+        .to(projectsTitleRef.current, {y: "100vh"})
+        .to(projectsTitleRef.current, {y: "-150vh"})
+
+        // slides right iphone
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: projectsRef.current,
+                start: "27% bottom",
+                end: "27% center",
+                scrub: true,
+                // markers: true,
+            }
+        })
+        .to(phoneRef.current, {x: "0px"})
+
+        // slide right project 1 description
+        gsap.to(bbthRef.current, {
+            scrollTrigger: {
+                trigger: projectsRef.current,
+                start: "30% bottom",
+                end: "30% center",
+                scrub: true,
+                // markers: true
+            },
+            x: "600px"
+        })
+    })
+
     return (
-        <div id="projectsContainer">
-            <div id="projectsPage"/>
-            <div id="projectsTitle">
+        <div ref={projectsRef} id="projectsContainer">
+            <div ref={projectsTitleRef} id="projectsTitle">
                 <h2>
                     Projects
                     <br/><hr/>
@@ -20,8 +66,8 @@ function Projects() {
                 </span>
             </div>
             <div id="project1Container">
-                <img src={bbth_iPhone} alt="iPhone"/>
-                <span>
+                <div ref={phoneRef} id="img"/>
+                <span ref={bbthRef}>
                     <h3>
                         Bon Bon Tea House
                     </h3>
@@ -38,7 +84,6 @@ function Projects() {
                     </a>
                 </span>
             </div>
-            
         </div>
     )
 }
