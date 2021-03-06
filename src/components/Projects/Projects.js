@@ -16,21 +16,20 @@ function Projects() {
         gsap.timeline({
             scrollTrigger: {
                 trigger: projectsRef.current,
-                start: "-5% bottom",
-                end: "15% top",
+                start: "8% bottom",
+                end: "65% center",
                 scrub: true,
                 // markers: true
             }
         })
-        .to(projectsTitleRef.current, {y: "100vh"})
-        .to(projectsTitleRef.current, {y: "-150vh"})
+        .to(projectsTitleRef.current, {y: "-200vh"})
 
         // slides right iphone
         gsap.timeline({
             scrollTrigger: {
                 trigger: projectsRef.current,
-                start: "27% bottom",
-                end: "27% center",
+                start: "25% bottom",
+                end: "25% center",
                 scrub: true,
                 // markers: true,
             }
@@ -38,16 +37,16 @@ function Projects() {
         .to(phoneRef.current, {x: "0px"})
 
         // slide right project 1 description
-        gsap.to(bbthRef.current, {
+        gsap.timeline({
             scrollTrigger: {
                 trigger: projectsRef.current,
-                start: "30% bottom",
-                end: "30% center",
+                start: "29% bottom",
+                end: "29% center",
                 scrub: true,
                 // markers: true
-            },
-            x: "45vw"
+            }
         })
+        .to(bbthRef.current, {x: "45vw"})
     })
 
     return (

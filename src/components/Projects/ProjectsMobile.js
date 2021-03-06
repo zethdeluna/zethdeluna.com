@@ -16,14 +16,13 @@ function ProjectsMobile() {
         gsap.timeline({
             scrollTrigger: {
             trigger: PMCRef.current,
-            start: "-5% bottom",
-            end: "15% top",
+            start: "8% bottom",
+            end: "65% center",
             scrub: true,
             // markers: true
             }
         })
-        .to(PIMRef.current, {y: "100vh"})
-        .to(PIMRef.current, {y: "-150vh"})
+        .to(PIMRef.current, {y: "-200vh"})
 
         // slides right iphone
         gsap.timeline({
