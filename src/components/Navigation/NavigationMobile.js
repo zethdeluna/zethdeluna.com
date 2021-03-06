@@ -3,7 +3,7 @@ import './NavigationMobile.scss';
 
 function NavigationMobile() {
     return (
-        <div id="navbarMobile" className="slide-top">
+        <div id="navbarMobile">
             <h1 id="myName"><a href="https://zethdeluna.com/">Zeth De Luna</a></h1>
             <ul>
                 <li><a href="https://github.com/zethdeluna" target="_blank" rel="noreferrer"><i class="fab fa-github-alt"></i></a></li>

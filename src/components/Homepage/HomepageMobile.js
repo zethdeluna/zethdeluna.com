@@ -6,27 +6,27 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 function HomepageMobile() {
-    const homeMobileRef = useRef();
+    const mobileHomeRef = useRef();
     const mobOpeningRef = useRef();
-    const meMobileRef = useRef();
+    const mobileMeRef = useRef();
     const mobDescrRef = useRef();
 
     useEffect(() => {
         gsap.timeline({
             scrollTrigger: {
-                trigger: homeMobileRef.current,
+                trigger: mobileHomeRef.current,
                 start: "top bottom",
                 end: "bottom top",
                 scrub: true,
                 // markers: true
             }
         })
-        .to([mobOpeningRef.current, meMobileRef.current, mobDescrRef.current], {opacity: 1})
-        .to([mobOpeningRef.current, meMobileRef.current, mobDescrRef.current], {opacity: 0})
+        .to([mobOpeningRef.current, mobileMeRef.current, mobDescrRef.current], {opacity: 1})
+        .to([mobOpeningRef.current, mobileMeRef.current, mobDescrRef.current], {opacity: 0})
     })
 
     return (
-        <div ref={homeMobileRef} id="homepageMobile">
+        <div ref={mobileHomeRef} id="homepageMobile">
             <div id="mobileOpening">
                 <h2 ref={mobOpeningRef}>
                     My name is <span>Zeth</span>,
@@ -36,7 +36,7 @@ function HomepageMobile() {
                     in <span>Los Angeles</span>.
                 </h2>
             </div>
-            <div ref={meMobileRef} id="meMobile"/>
+            <div ref={mobileMeRef} id="meMobile"/>
             <div id="mobileHomeDescription">
                 <h2 ref={mobDescrRef}>
                     I am a <span>creative</span>

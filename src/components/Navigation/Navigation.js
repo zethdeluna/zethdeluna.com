@@ -5,7 +5,7 @@ function Navigation() {
     return (
         <div>
             {/* navigation */}
-            <div id="navbar" className="slide-top">
+            <div id="navbar">
                 <h1 id="myName"><a href="https://zethdeluna.com/">Zeth De Luna</a></h1>
                 {/* <button id="myName">Zeth De Luna</button> */}
                 <ul>

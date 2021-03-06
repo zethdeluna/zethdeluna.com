@@ -1,0 +1,20 @@
+// style for loading page
+
+#loadContainer {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #c4a8f5;
+
+    #loadCircle {
+        position: fixed;
+        width: 340px;
+        height: 340px;
+        border-radius: 50%;
+        background-color: #f3edfd;
+        box-shadow: 0px 0px 24px 8px rgba(0, 0, 0, 0.2);
+    }
+}

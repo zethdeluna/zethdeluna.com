@@ -52,10 +52,6 @@ function Hello() {
                 </text>
                 </g>
             </svg>
-            {/* <div id="helloScroll" className="slide-top">
-                <span ref={scrollRef} id="scroll">Scroll</span>
-                <span ref={arrowRef} id="arrow"/>
-            </div> */}
         </div>
     )
 }
