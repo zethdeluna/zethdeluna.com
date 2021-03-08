@@ -10,43 +10,92 @@ function Projects() {
     const projectsTitleRef = useRef();
     const phoneRef = useRef();
     const bbthRef = useRef();
+    const macbookRef = useRef();
+    const portfolioRef = useRef();
 
     useEffect(() => {
         // scrolls up Project Page Intro
         gsap.timeline({
             scrollTrigger: {
                 trigger: projectsRef.current,
-                start: "8% bottom",
-                end: "65% center",
+                start: "20% bottom",
+                end: "70% center",
                 scrub: true,
                 // markers: true
             }
         })
         .to(projectsTitleRef.current, {y: "-200vh"})
 
-        // slides right iphone
+        // slide iphone into view
         gsap.timeline({
             scrollTrigger: {
                 trigger: projectsRef.current,
-                start: "25% bottom",
-                end: "25% center",
+                start: "35% bottom",
+                end: "35% center",
                 scrub: true,
                 // markers: true,
             }
         })
         .to(phoneRef.current, {x: "0px"})
 
-        // slide right project 1 description
+        // slide into view project 1 description
         gsap.timeline({
             scrollTrigger: {
                 trigger: projectsRef.current,
-                start: "29% bottom",
-                end: "29% center",
+                start: "39% bottom",
+                end: "39% center",
                 scrub: true,
                 // markers: true
             }
         })
         .to(bbthRef.current, {x: "45vw"})
+
+        // slide iphone out of view
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: projectsRef.current,
+                start: "60% bottom",
+                end: "70% center",
+                scrub: true
+            }
+        })
+        .to(phoneRef.current, {x: "-450px"})
+
+        // slide out of view project 1
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: projectsRef.current,
+                start: "60% bottom",
+                end: "60% 30%",
+                scrub: true,
+                // markers: true
+            }
+        })
+        .to(bbthRef.current, {x: "-500px"})
+
+        // slide macbook into view
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: projectsRef.current,
+                start: "60% bottom",
+                end: "60% 30%",
+                scrub: true,
+                // markers: true
+            }
+        })
+        .to(macbookRef.current, {x: "0"})
+
+        // slide portfolio project into view
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: projectsRef.current,
+                start: "65% bottom",
+                end: "65% 30%",
+                scrub: true,
+                // markers: true
+            }
+        })
+        .to(portfolioRef.current, {x: "0"})
     })
 
     return (
@@ -65,9 +114,9 @@ function Projects() {
                 </span>
             </div>
             <div id="project1Container">
-                <div ref={phoneRef} id="img"/>
+                <div ref={phoneRef} id="bbthProjectIMG"/>
                 <span ref={bbthRef}>
-                    <h3>
+                    <h3 id="bbthProjectTitle">
                         Bon Bon Tea House
                     </h3>
                     <p>
@@ -80,6 +129,31 @@ function Projects() {
                     target="_blank"
                     rel="noreferrer">
                         Check out the website
+                    </a>
+                    <br/><br/>
+                    <a href="https://github.com/zethdeluna/bbth"
+                    target="_blank"
+                    rel="noreferrer">
+                        Check out the code
+                    </a>
+                </span>
+            </div>
+            <div id="project2Container">
+                <div ref={macbookRef} id="portfolioProjectIMG"/>
+                <span ref={portfolioRef}>
+                    <h3 id="portfolioProjectTitle">
+                        zethdeluna.com
+                    </h3>
+                    <p>
+                        The webpage you're currently scrolling through was built
+                        by me and my good friend, Google Search. For a 
+                        behind the scenes look, feel free to take a stroll
+                        through my Github.
+                    </p>
+                    <a href="https://github.com/zethdeluna/zethdeluna.com"
+                    target="_blank"
+                    rel="noreferrer">
+                        Check out the code
                     </a>
                 </span>
             </div>

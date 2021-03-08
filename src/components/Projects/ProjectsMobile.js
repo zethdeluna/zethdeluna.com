@@ -78,6 +78,12 @@ function ProjectsMobile() {
                     rel="noreferrer">
                         Check out the website
                     </a>
+                    <br/><br/>
+                    <a href="https://github.com/zethdeluna/bbth"
+                    target="_blank"
+                    rel="noreferrer">
+                        Check out the code
+                    </a>
                 </span>
             </div>
         </div>
