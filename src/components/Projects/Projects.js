@@ -42,13 +42,13 @@ function Projects() {
         gsap.timeline({
             scrollTrigger: {
                 trigger: projectsRef.current,
-                start: "39% bottom",
-                end: "39% center",
+                start: "40% bottom",
+                end: "40% center",
                 scrub: true,
                 // markers: true
             }
         })
-        .to(bbthRef.current, {x: "45vw"})
+        .to(bbthRef.current, {x: "0"})
 
         // slide iphone out of view
         gsap.timeline({
@@ -71,7 +71,7 @@ function Projects() {
                 // markers: true
             }
         })
-        .to(bbthRef.current, {x: "-500px"})
+        .to(bbthRef.current, {x: "-100vw"})
 
         // slide macbook into view
         gsap.timeline({

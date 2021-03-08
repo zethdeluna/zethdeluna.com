@@ -58,7 +58,7 @@
             position: fixed;
             bottom: -10vh;
             width: 400px;
-            height: 710px;
+            height: 720px;
             background-image: url('../../images/bbth_iPhone.png');
             transform: rotate(15deg) translateX(-450px);
         }
@@ -66,7 +66,8 @@
         span {
             position: fixed;
             top: 50%;
-            transform: translateX(-500px) translateY(-50%);
+            left: 45%;
+            transform: translateX(-100vw) translateY(-50%);
             // background-color: rgba(0, 0, 0, 0.4);
 
             #bbthProjectTitle {
@@ -203,7 +204,7 @@
                 transform: rotate(15deg) translateX(-450px) scale(0.9);
             }
             span {
-                transform: translateX(-500px) translateY(-50%);
+                transform: translateX(-100vw) translateY(-50%);
             }
         }
         #project2Container {

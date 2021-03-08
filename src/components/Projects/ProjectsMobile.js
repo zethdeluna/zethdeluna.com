@@ -10,41 +10,87 @@ function ProjectsMobile() {
     const PIMRef = useRef();
     const bbthImgRef = useRef();
     const bbthMobProjRef = useRef();
+    const portfolioImgRef = useRef();
+    const portfolioMobRef = useRef();
 
     useEffect(() => {
         // scrolls up Project page intro
         gsap.timeline({
             scrollTrigger: {
             trigger: PMCRef.current,
-            start: "8% bottom",
-            end: "65% center",
+            start: "20% bottom",
+            end: "70% center",
             scrub: true,
             // markers: true
             }
         })
         .to(PIMRef.current, {y: "-200vh"})
 
-        // slides right iphone
+        // slides bbth iphone into view
         gsap.timeline({
             scrollTrigger: {
                 trigger: PMCRef.current,
-                start: "30% bottom",
-                end: "30% center",
+                start: "35% bottom",
+                end: "40% center",
                 scrub: true
             }
         })
-        .to(bbthImgRef.current, {x: "-50px"})
+        .to(bbthImgRef.current, {x: "0"})
 
         // slide right project 1 description
         gsap.to(bbthMobProjRef.current, {
             scrollTrigger: {
                 trigger: PMCRef.current,
-                start: "33% bottom",
-                end: "33% center",
+                start: "40% bottom",
+                end: "40% center",
                 scrub: true
             },
-            x: "17vw"
+            x: "0"
         })
+
+        // slide bbth iphone out of view
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: PMCRef.current,
+                start: "65% bottom",
+                end: "75% center",
+                scrub: true
+            }
+        })
+        .to(bbthImgRef.current, {x: "-550px"})
+
+        // slide bbth project description out of view
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: PMCRef.current,
+                start: "65% bottom",
+                end: "65% 30%",
+                scrub: true
+            }
+        })
+        .to(bbthMobProjRef.current, {x: "-700px"})
+
+        // slide portfolio macbook in
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: PMCRef.current,
+                start: "65% bottom",
+                end: "65% 30%",
+                scrub: true
+            }
+        })
+        .to(portfolioImgRef.current, {x: "0"})
+
+        // slide portfolio description in
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: PMCRef.current,
+                start: "70% bottom",
+                end: "70% 30%",
+                scrub: true
+            }
+        })
+        .to(portfolioMobRef.current, {x: "0"})
     })
 
     return (
@@ -80,6 +126,25 @@ function ProjectsMobile() {
                     </a>
                     <br/><br/>
                     <a href="https://github.com/zethdeluna/bbth"
+                    target="_blank"
+                    rel="noreferrer">
+                        Check out the code
+                    </a>
+                </span>
+            </div>
+            <div id="proj2Mobile">
+                <div ref={portfolioImgRef} id="portfolioMobileIMG"/>
+                <span ref={portfolioMobRef}>
+                    <h3>
+                        zethdeluna.com
+                    </h3>
+                    <p>
+                        The webpage you're currently scrolling through was built
+                        by me and my good friend, Google Search. For a 
+                        behind the scenes look, feel free to take a stroll
+                        through my Github.
+                    </p>
+                    <a href="https://github.com/zethdeluna/zethdeluna.com"
                     target="_blank"
                     rel="noreferrer">
                         Check out the code
