@@ -8,13 +8,10 @@ gsap.registerPlugin(ScrollTrigger);
 function Hello() {
     const helloContainerRef = useRef();
     const helloRef = useRef();
-    // const scrollRef = useRef();
-    // const arrowRef = useRef();
     const circleRef = useRef();
 
     useEffect(() => {
         gsap.to(
-            // scrollRef.current, arrowRef.current, -- took the scroll arrow out but keeping it here just in case
             [helloRef.current, circleRef.current], {
                 scrollTrigger: {
                     trigger: helloContainerRef.current,
