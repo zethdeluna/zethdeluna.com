@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.ea38e0b4.chunk.css",
-    "main.js": "/static/js/main.de917b75.chunk.js",
-    "main.js.map": "/static/js/main.de917b75.chunk.js.map",
+    "main.css": "/static/css/main.d3108791.chunk.css",
+    "main.js": "/static/js/main.4b0ded40.chunk.js",
+    "main.js.map": "/static/js/main.4b0ded40.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.65390091.js",
     "runtime-main.js.map": "/static/js/runtime-main.65390091.js.map",
     "static/js/2.8380983c.chunk.js": "/static/js/2.8380983c.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.3e3ecb5c.chunk.js": "/static/js/3.3e3ecb5c.chunk.js",
     "static/js/3.3e3ecb5c.chunk.js.map": "/static/js/3.3e3ecb5c.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.ea38e0b4.chunk.css.map": "/static/css/main.ea38e0b4.chunk.css.map",
+    "static/css/main.d3108791.chunk.css.map": "/static/css/main.d3108791.chunk.css.map",
     "static/js/2.8380983c.chunk.js.LICENSE.txt": "/static/js/2.8380983c.chunk.js.LICENSE.txt",
     "static/media/ProjectsMobile.scss": "/static/media/macbookV3.fe58d3cc.png",
     "static/media/HelloMobile.scss": "/static/media/hello_zeth.993811a1.png",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.65390091.js",
     "static/js/2.8380983c.chunk.js",
-    "static/css/main.ea38e0b4.chunk.css",
-    "static/js/main.de917b75.chunk.js"
+    "static/css/main.d3108791.chunk.css",
+    "static/js/main.4b0ded40.chunk.js"
   ]
 }
