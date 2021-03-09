@@ -9,3 +9,4 @@ export { default as AboutMobile } from './About/AboutMobile.js';
 export { default as Projects } from './Projects/Projects.js';
 export { default as ProjectsMobile } from './Projects/ProjectsMobile.js';
 export { default as Contact } from './Contact/Contact.js';
+export { default as ContactMobile } from './Contact/ContactMobile.js';

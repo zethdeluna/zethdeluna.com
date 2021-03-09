@@ -1,39 +1,38 @@
 // 
-// Contact Page Style
+// Mobile Contact Page Style
 // 
 
-#contactContainer {
+#contactMobileContainer {
     z-index: 6;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
     position: relative;
     width: 100vw;
     height: 200vh;
     background-color: #a1cfb5;
 
-    #formContainer {
+    #formMobileContainer {
         display: flex;
+        width: 100vw;
+        height: 100vh;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        position: fixed;
-        top: 50%;
-        margin-top: -350px;
-        transform: translateY(100vh);
-        -webkit-transform: translateY(100vh);;
-        width: 700px;
-        height: 700px;
-        background-color: #c8e3d4;
-        border-radius: 50%;
-        box-shadow: 0px 0px 24px 8px rgba(0, 0, 0, 0.2);
+        position: relative;
+
+        h2 {
+            font-size: 36px;
+            color: #2d5840;
+            padding-bottom: 64px;
+        }
 
         form {
             z-index: 7;
             display: flex;
-            height: 600px;
             flex-direction: column;
-            justify-content: space-evenly;
+            justify-content: center;
             align-items: center;
 
             ::placeholder {
@@ -41,7 +40,7 @@
                 opacity: 0.5;
             }
 
-            .userInput {
+            .userInputMobile {
                 margin: 10px 0;
 
                 input {
@@ -52,7 +51,7 @@
                     }
                 }
 
-                #name, #email {
+                #nameMobile, #emailMobile {
                     text-align: center;
                     border: none;
                     border-bottom: 1px solid #3a7252;
@@ -60,14 +59,7 @@
                     margin: 0;
                     font-size: 14px;
                     background-color: transparent;
-                }
-
-                #name {
                     width: 400px;
-                }
-
-                #email {
-                    width: 500px;
                 }
 
                 textarea {
@@ -80,8 +72,8 @@
                     }
                 }
 
-                #message {
-                    width: 500px;
+                #messageMobile {
+                    width: 400px;
                     height: 200px;
                     text-align: center;
                     text-justify: auto;
@@ -93,7 +85,7 @@
                 }
             }
 
-            #submitButton {
+            #submitButtonMobile {
                 font-family: Helvetica, sans-serif;
                 font-size: 14px;
                 color: #2d5840;
@@ -102,81 +94,76 @@
                 background-color: transparent;
                 width: 75px;
                 height: 75px;
+                margin-top: 20px;
                 border-radius: 50%;
-                cursor: pointer;
                 transition: all 400ms ease;
 
                 &:hover {
-                    color: #c8e3d4;
+                    color: #a1cfb5;
                     background-color: #3a7252;
-                }
-            }
-        }
-
-        svg {
-            position: absolute;
-            
-            #contactSirko {
-                transform-origin: center;
-                -webkit-transform-origin: center;
-                transform: scale(1.29) rotate(130deg);
-                -webkit-transform: scale(1.29) rotate(130deg);
-
-                path {
-                    fill: none;
-                }
-
-                text {
-                    fill: #3d3d3d;
                 }
             }
         }
     }
 
-    #infoContainer {
+    #infoMobileContainer {
         display: flex;
+        position: relative;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        position: fixed;
-        top: 50%;
-        margin-top: -350px;
-        transform: translateY(100vh);
-        -webkit-transform: translateY(100vh);
-        opacity: 0;
-        width: 700px;
-        height: 700px;
-        background-color: #c8e3d4;
-        border-radius: 50%;
-        box-shadow: 0px 0px 24px 8px rgba(0, 0, 0, 0.2);
+        width: 100vw;
+        height: 100vh;
+
+        h2 {
+            font-size: 36px;
+            color: #2d5840;
+            padding-bottom: 64px;
+        }
 
         a, p {
             z-index: 8;
             font-family: Helvetica, sans-serif;
-            font-size: 36px;
+            font-size: 30px;
             font-weight: 800;
             color: #2d5840;
             cursor: pointer;
             margin: 0;
-            padding: 8px 0;
+            padding: 24px 0;
         }
+    }
+}
 
-        svg {
-            position: absolute;
-            
-            #contactSirko {
-                transform-origin: center;
-                -webkit-transform-origin: center;
-                transform: scale(1.29) rotate(-50deg);
-                -webkit-transform: scale(1.29) rotate(-50deg);
-
-                path {
-                    fill: none;
+// MEDIA QUERIES
+@media (max-width: 400px) {
+    #contactMobileContainer {
+        #formMobileContainer {
+            h2 {
+                font-size: 32px;
+            }
+            form {
+                .userInputMobile {
+                    #nameMobile, #emailMobile, #messageMobile {
+                        width: 250px;
+                    }
                 }
-
-                text {
-                    fill: #3d3d3d;
-                }
+            }
+        }
+        #infoMobileContainer {
+            h2 {
+                font-size: 32px;
+            }
+            a, p {
+                font-size: 20px;
+            }
+        }
+    }
+}
+@media (max-width: 300px) {
+    #contactMobileContainer {
+        #infoMobileContainer {
+            a, p {
+                font-size: 16px;
             }
         }
     }

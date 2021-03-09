@@ -6,7 +6,7 @@ import {
   Homepage, HomepageMobile, 
   About, AboutMobile,
   Projects, ProjectsMobile,
-  Contact 
+  Contact, ContactMobile
 } from './components';
 
 
@@ -48,7 +48,7 @@ class App extends Component {
       homepage = <div><HomepageMobile/></div>;
       about = <div><AboutMobile/></div>;
       projects = <div><ProjectsMobile/></div>;
-      contact = <div></div>;
+      contact = <div><ContactMobile/></div>;
     } else {
       navigation = <div><Navigation/></div>;
       hello = <div><Hello/></div>;
