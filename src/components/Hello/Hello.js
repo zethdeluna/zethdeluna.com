@@ -20,7 +20,7 @@ function Hello() {
                     scrub: true,
                     // markers: true
                 },
-                opacity: 0,
+                autoAlpha: 0,
             }
         )
         gsap.to(

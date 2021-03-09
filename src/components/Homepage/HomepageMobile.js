@@ -21,8 +21,8 @@ function HomepageMobile() {
                 // markers: true
             }
         })
-        .to([mobOpeningRef.current, mobileMeRef.current, mobDescrRef.current], {opacity: 1})
-        .to([mobOpeningRef.current, mobileMeRef.current, mobDescrRef.current], {opacity: 0})
+        .to([mobOpeningRef.current, mobileMeRef.current, mobDescrRef.current], {autoAlpha: 1})
+        .to([mobOpeningRef.current, mobileMeRef.current, mobDescrRef.current], {autoAlpha: 0})
     })
 
     return (

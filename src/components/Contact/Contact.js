@@ -76,7 +76,7 @@ function Contact() {
                 scrub: true
             }
         })
-        .to(formRef.current, {opacity: 0}, 0)
+        .to(formRef.current, {autoAlpha: 0}, 0)
         .to(formCircleRef.current, {rotate: "180deg"}, 0)
 
         // fade in "other things" page
@@ -98,7 +98,7 @@ function Contact() {
                 // markers: true
             }
         })
-        .to(otherInfoRef.current, {opacity: 1}, 0)
+        .to(otherInfoRef.current, {autoAlpha: 1}, 0)
         .to(infoCircleRef.current, {rotate: "180deg"}, 0)
     })
 

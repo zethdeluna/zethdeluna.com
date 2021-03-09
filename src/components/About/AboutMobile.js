@@ -40,8 +40,8 @@ function AboutMobile() {
                     toggleActions: "play reverse play reverse"
                 }
             })
-            .to(interest, {opacity: 1, duration: 0.5})
-            .to(interest, {opacity: 0, duration: 0.5}, 1)
+            .to(interest, {autoAlpha: 1, duration: 0.5})
+            .to(interest, {autoAlpha: 0, duration: 0.5}, 1)
         })
     })
 

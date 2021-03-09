@@ -21,9 +21,9 @@ function Homepage() {
                 // markers: true
             }
         })
-        .to([openingRef.current, descrRef.current, picRef.current], {opacity: 0.5})
-        .to([openingRef.current, descrRef.current, picRef.current], {opacity: 1})
-        .to([openingRef.current, descrRef.current, picRef.current], {opacity: 0})
+        .to([openingRef.current, descrRef.current, picRef.current], {autoAlpha: 0.5})
+        .to([openingRef.current, descrRef.current, picRef.current], {autoAlpha: 1})
+        .to([openingRef.current, descrRef.current, picRef.current], {autoAlpha: 0})
     })
 
     return (
