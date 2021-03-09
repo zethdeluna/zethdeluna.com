@@ -66,6 +66,7 @@
             background-size: cover;
             background-position: center;
             transform: translateX(-700px) rotate(90deg);
+            -webkit-transform: translateX(-700px) rotate(90deg);
         }
 
         span {
@@ -73,6 +74,7 @@
             top: 65vh;
             left: 17vw;
             transform: translateX(-700px) translateY(-50%);
+            -webkit-transform: translateX(-700px) translateY(-50%);
 
             h3 {
                 width: 500px;
@@ -118,6 +120,7 @@
             background-image: url('../../images/macbookV3.png');
             background-size: cover;
             transform: translateX(350px);
+            -webkit-transform: translateX(350px);
         }
 
         span {
@@ -125,6 +128,7 @@
             top: 50%;
             left: 10vw;
             transform: translateX(100vw) translateY(-50%);
+            -webkit-transform: translateX(100vw) translateY(-50%);
 
             h3 {
                 width: 500px;
@@ -172,6 +176,7 @@
                 width: 300px;
                 height: 620px;
                 transform: translateX(-700px) rotate(90deg);
+                -webkit-transform: translateX(-700px) rotate(90deg);
             }
             span {
                 top: 75vh;
@@ -223,6 +228,7 @@
                 height: 620px;
                 left: -100px;
                 transform: translateX(-700px) rotate(90deg) scale(0.9);
+                -webkit-transform: translateX(-700px) rotate(90deg) scale(0.9);
             }
             span {
                 top: 75vh;
@@ -244,6 +250,7 @@
                 height: 426px;
                 right: -350px;
                 transform: translateX(400px);
+                -webkit-transform: translateX(400px);
             }
             span {
                 h3 {
@@ -268,6 +275,7 @@
                 width: 300px;
                 height: 620px;
                 transform: rotate(90deg) translateX(-20vh) translateY(550px) scale(0.6);
+                -webkit-transform: rotate(90deg) translateX(-20vh) translateY(550px) scale(0.6);
             }
             span {
                 top: 70vh;
@@ -289,6 +297,7 @@
                 height: 284px;
                 right: -200px;
                 transform: translateX(400px);
+                -webkit-transform: translateX(400px);
             }
             span {
                 top: 33%;

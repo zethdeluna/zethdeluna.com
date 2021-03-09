@@ -27,9 +27,11 @@
     svg {
         position: fixed;
         transform: scale(0.85);
+        -webkit-transform: scale(0.85);
 
         #sirko {
             transform-origin: center;
+            -webkit-transform-origin: center;
             animation: circle 1s infinite alternate linear;
             @keyframes circle {
                 0% {

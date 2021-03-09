@@ -23,9 +23,11 @@
     svg {
         position: fixed;
         transform: scale(0.85);
+        -webkit-transform: scale(0.85);
 
         #sirkoMobile {
             transform-origin: center;
+            -webkit-transform-origin: center;
             animation: circle-mobile 1s infinite alternate linear;
             @keyframes circle-mobile {
                 0% {
@@ -52,6 +54,7 @@
         }
         svg {
             transform: scale(0.68);
+            -webkit-transform: scale(0.68);
         }
     }
 }
@@ -63,6 +66,7 @@
         }
         svg {
             transform: scale(0.6);
+            -webkit-transform: scale(0.6);
         }
     }
 }
@@ -74,6 +78,7 @@
         }
         svg {
             transform: scale(0.43);
+            -webkit-transform: scale(0.43);
         }
     }
 }

@@ -21,6 +21,7 @@
         top: 50%;
         margin-top: -350px;
         transform: translateY(100vh);
+        -webkit-transform: translateY(100vh);;
         width: 700px;
         height: 700px;
         background-color: #c8e3d4;
@@ -117,7 +118,9 @@
             
             #contactSirko {
                 transform-origin: center;
+                -webkit-transform-origin: center;
                 transform: scale(1.29) rotate(130deg);
+                -webkit-transform: scale(1.9) rotate(130deg);
 
                 path {
                     fill: none;
@@ -139,6 +142,7 @@
         top: 50%;
         margin-top: -350px;
         transform: translateY(100vh);
+        -webkit-transform: translateY(100vh);
         opacity: 0;
         width: 700px;
         height: 700px;
@@ -162,7 +166,9 @@
             
             #contactSirko {
                 transform-origin: center;
+                -webkit-transform-origin: center;
                 transform: scale(1.29) rotate(-50deg);
+                -webkit-transform: scale(1.29) rotate(-50deg);
 
                 path {
                     fill: none;
@@ -179,31 +185,25 @@
 // MEDIA QUERIES
 @media (max-width: 800px) {
     #contactContainer {
-        #formContainer {
+        #formContainer, #infoContainer {
             transform: translateY(100vh) scale(0.9);
-        }
-        #infoContainer {
-            transform: translateY(100vh) scale(0.9);
+            -webkit-transform: translateY(100vh) scale(0.9);
         }
     }
 }
 @media (max-width: 600px) {
     #contactContainer {
-        #formContainer {
+        #formContainer, #infoContainer {
             transform: translateY(100vh) scale(0.6);
-        }
-        #infoContainer {
-            transform: translateY(100vh) scale(0.6);
+            -webkit-transform: translateY(100vh) scale(0.6);
         }
     }
 }
 @media (max-width: 400px) {
     #contactContainer {
-        #formContainer {
+        #formContainer, #infoContainer {
             transform: translateY(100vh) scale(0.5);
-        }
-        #infoContainer {
-            transform: translateY(100vh) scale(0.5);
+            -webkit-transform: translateY(100vh) scale(0.5);
         }
     }
 }
