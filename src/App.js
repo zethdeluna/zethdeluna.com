@@ -43,19 +43,19 @@ class App extends Component {
     let navigation, hello, homepage, about, projects, contact;
 
     if (width < 780) {
-      navigation = <div><NavigationMobile/></div>;
-      hello = <div><HelloMobile/></div>;
-      homepage = <div><HomepageMobile/></div>;
-      about = <div><AboutMobile/></div>;
-      projects = <div><ProjectsMobile/></div>;
-      contact = <div><ContactMobile/></div>;
+      navigation = <NavigationMobile/>;
+      hello =<HelloMobile/>;
+      homepage = <HomepageMobile/>;
+      about = <AboutMobile/>;
+      projects = <ProjectsMobile/>;
+      contact = <ContactMobile/>;
     } else {
-      navigation = <div><Navigation/></div>;
-      hello = <div><Hello/></div>;
-      homepage = <div><Homepage/></div>;
-      about = <div><About/></div>;
-      projects = <div><Projects/></div>;
-      contact = <div><Contact/></div>
+      navigation = <Navigation/>;
+      hello = <Hello/>;
+      homepage = <Homepage/>;
+      about = <About/>;
+      projects = <Projects/>;
+      contact = <Contact/>;
     }
 
     return (
