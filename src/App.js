@@ -48,7 +48,7 @@ class App extends Component {
       homepage = <div><HomepageMobile/></div>;
       about = <div><AboutMobile/></div>;
       projects = <div><ProjectsMobile/></div>;
-      contact = <div><Contact/></div>;
+      contact = <div></div>;
     } else {
       navigation = <div><Navigation/></div>;
       hello = <div><Hello/></div>;
