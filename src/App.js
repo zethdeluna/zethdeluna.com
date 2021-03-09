@@ -5,7 +5,9 @@ import {
   Hello, HelloMobile,
   Homepage, HomepageMobile, 
   About, AboutMobile,
-  Projects, ProjectsMobile } from './components';
+  Projects, ProjectsMobile,
+  Contact 
+} from './components';
 
 
 class App extends Component {
@@ -38,20 +40,22 @@ class App extends Component {
 
   render() {
     const width = this.state.width;
-    let navigation, hello, homepage, about, projects;
+    let navigation, hello, homepage, about, projects, contact;
 
     if (width < 780) {
       navigation = <div><NavigationMobile/></div>;
-      hello = <div><HelloMobile/></div>
+      hello = <div><HelloMobile/></div>;
       homepage = <div><HomepageMobile/></div>;
-      about = <div><AboutMobile/></div>
-      projects = <div><ProjectsMobile/></div>
+      about = <div><AboutMobile/></div>;
+      projects = <div><ProjectsMobile/></div>;
+      contact = <div><Contact/></div>;
     } else {
       navigation = <div><Navigation/></div>;
-      hello = <div><Hello/></div>
+      hello = <div><Hello/></div>;
       homepage = <div><Homepage/></div>;
-      about = <div><About/></div>
-      projects = <div><Projects/></div>
+      about = <div><About/></div>;
+      projects = <div><Projects/></div>;
+      contact = <div><Contact/></div>
     }
 
     return (
@@ -61,6 +65,7 @@ class App extends Component {
           {homepage}
           {about}
           {projects}
+          {contact}
       </div>
     )
   }
