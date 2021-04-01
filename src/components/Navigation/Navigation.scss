@@ -31,6 +31,14 @@
       padding-top: 2px;
       padding-left: 5%;
       // background-color: rgba(255, 0, 0, 0.4);
+
+      .AnchorLink {
+        transition: all 400ms ease;
+
+        &:hover {
+          color: #3d3d3d;
+        }
+      }
     }
   
     ul {
@@ -49,12 +57,23 @@
       li {
         display: inline-block;
         padding: 0 12px;
+
+        .AnchorLink {
+          font-weight: bold;
+          letter-spacing: 4px;
+          transition: all 400ms ease;
+
+          &:hover {
+            color: #3d3d3d;
+          }
+        }
   
         i {
           display: inline-block;
-          transition: all 0.4s ease-in-out;
+          transition: all 400ms ease;
         }
         i:hover {
+          color: #3d3d3d;
           transform: rotate(360deg);
           -webkit-transform: rotate(360deg);
         }
