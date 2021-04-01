@@ -14,6 +14,14 @@
     height: 10vh;
     // transition: transform 300ms ease;
     // background-color: rgba(255, 255, 255, 0.4);
+
+    .anchorMobile {
+        transition: all 400ms ease;
+
+        &:hover {
+            color: #3d3d3d;
+        }
+    }
     
     h1 {
         font-size: 20px;
@@ -21,9 +29,6 @@
         letter-spacing: 2px;
         display: flex;
         align-items: center;
-        // height: 100%;
-        // width: 45%;
-        // padding-left: 5%;
         padding-top: 1vh;
         margin: 0;
         // background-color: rgba(255, 0, 0, 0.4);
@@ -33,9 +38,6 @@
         list-style: none;
         display: flex;
         flex-direction: row;
-        // height: 100%;
-        // width: 45%;
-        // padding-top: 1vh;
         padding: 0;
         margin: 0;
         align-items: center;
@@ -45,6 +47,19 @@
         li {
             font-size: 20px;
             padding: 0 10px;
+
+            .projects {
+                font-weight: bold;
+                letter-spacing: 2px;
+            }
+
+            i {
+                transition: all 400ms ease;
+                
+                &:hover {
+                    color: #3d3d3d;
+                }
+            }
         }
     }
 }
