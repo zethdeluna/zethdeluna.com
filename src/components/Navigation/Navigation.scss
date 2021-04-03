@@ -77,6 +77,19 @@
           transform: rotate(360deg);
           -webkit-transform: rotate(360deg);
         }
+
+        #frontendMentorLogo {
+          margin-top: 5px;
+          width: 24px;
+          transition: all 400ms ease;
+          // transform-origin: 24px 29px;
+
+          &:hover {
+            filter: invert(70%);
+            transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+          }
+        }
       }
       
     }
