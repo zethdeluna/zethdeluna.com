@@ -7,9 +7,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Projects() {
     const projectsRef = useRef();
+
     const projectsTitleRef = useRef();
+    const projTitleTextRef = useRef();
+
+    const proj1Ref = useRef();
     const phoneRef = useRef();
     const bbthRef = useRef();
+
+    const proj2Ref = useRef();
     const macbookRef = useRef();
     const portfolioRef = useRef();
 
@@ -17,23 +23,23 @@ function Projects() {
         // scrolls up Project Page Intro
         gsap.timeline({
             scrollTrigger: {
-                trigger: projectsRef.current,
-                start: "20% bottom",
-                end: "70% center",
+                trigger: projectsTitleRef.current,
+                start: "top bottom",
+                end: "bottom 25%",
                 scrub: true,
                 // markers: true
             }
         })
-        .to(projectsTitleRef.current, {y: "-200vh"})
+        .to(projTitleTextRef.current, {y: "-100vh"})
 
         // slide iphone into view
         gsap.timeline({
             scrollTrigger: {
-                trigger: projectsRef.current,
-                start: "35% bottom",
-                end: "35% center",
+                trigger: proj1Ref.current,
+                start: "top bottom",
+                end: "40% center",
                 scrub: true,
-                // markers: true,
+                // markers: true
             }
         })
         .to(phoneRef.current, {x: "0px"})
@@ -41,8 +47,8 @@ function Projects() {
         // slide into view project 1 description
         gsap.timeline({
             scrollTrigger: {
-                trigger: projectsRef.current,
-                start: "40% bottom",
+                trigger: proj1Ref.current,
+                start: "25% bottom",
                 end: "40% center",
                 scrub: true,
                 // markers: true
@@ -53,20 +59,21 @@ function Projects() {
         // slide iphone out of view
         gsap.timeline({
             scrollTrigger: {
-                trigger: projectsRef.current,
-                start: "60% bottom",
-                end: "70% center",
-                scrub: true
+                trigger: proj1Ref.current,
+                start: "60% center",
+                end: "bottom top",
+                scrub: true,
+                // markers: true
             }
         })
-        .to(phoneRef.current, {x: "-450px"})
+        .to(phoneRef.current, {x: "-460px"})
 
         // slide out of view project 1
         gsap.timeline({
             scrollTrigger: {
-                trigger: projectsRef.current,
-                start: "60% bottom",
-                end: "60% 30%",
+                trigger: proj1Ref.current,
+                start: "60% center",
+                end: "bottom top",
                 scrub: true,
                 // markers: true
             }
@@ -76,11 +83,11 @@ function Projects() {
         // slide macbook into view
         gsap.timeline({
             scrollTrigger: {
-                trigger: projectsRef.current,
-                start: "60% bottom",
-                end: "60% 30%",
+                trigger: proj2Ref.current,
+                start: "top bottom",
+                end: "center 60%",
                 scrub: true,
-                // markers: true
+                // markers: true 
             }
         })
         .to(macbookRef.current, {x: "0"})
@@ -88,9 +95,9 @@ function Projects() {
         // slide portfolio project into view
         gsap.timeline({
             scrollTrigger: {
-                trigger: projectsRef.current,
-                start: "65% bottom",
-                end: "65% 30%",
+                trigger: proj2Ref.current,
+                start: "25% bottom",
+                end: "center 60%",
                 scrub: true,
                 // markers: true
             }
@@ -101,19 +108,21 @@ function Projects() {
     return (
         <div ref={projectsRef} id="projectsContainer">
             <div ref={projectsTitleRef} id="projectsTitle">
-                <h2>
-                    Projects
-                    <br/><hr/>
-                </h2>
-                <span>
-                    I'm a self-taught web developer who is eager to learn.
-                    <br/>
-                    Here are some projects that I worked on to help me 
-                    <br/> 
-                    dive deeper into the world of web development & design.
-                </span>
+                <div ref={projTitleTextRef} id="projTitleText">
+                    <h2>
+                        Projects
+                        <br/><hr/>
+                    </h2>
+                    <span>
+                        I'm a self-taught web developer who is eager to learn.
+                        <br/>
+                        Here are some projects that I worked on to help me 
+                        <br/> 
+                        dive deeper into the world of web development & design.
+                    </span>
+                </div>
             </div>
-            <div id="project1Container">
+            <div ref={proj1Ref} id="project1Container">
                 <div ref={phoneRef} id="bbthProjectIMG"/>
                 <span ref={bbthRef}>
                     <h3 id="bbthProjectTitle">
@@ -138,7 +147,7 @@ function Projects() {
                     </a>
                 </span>
             </div>
-            <div id="project2Container">
+            <div ref={proj2Ref} id="project2Container">
                 <div ref={macbookRef} id="portfolioProjectIMG"/>
                 <span ref={portfolioRef}>
                     <h3 id="portfolioProjectTitle">
@@ -146,9 +155,9 @@ function Projects() {
                     </h3>
                     <p>
                         The webpage you're currently scrolling through was built
-                        by me and my good friend, Google Search. For a 
-                        behind the scenes look, feel free to take a stroll
-                        through my Github.
+                        by me &mdash; using React JS, GSAP, SASS, and good ol' 
+                        Stack Overflow. For a behind the scenes look, feel free
+                        to take a stroll through my Github.
                     </p>
                     <a href="https://github.com/zethdeluna/zethdeluna.com"
                     target="_blank"
