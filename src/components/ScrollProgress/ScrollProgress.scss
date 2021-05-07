@@ -1,0 +1,23 @@
+// 
+// Scroll Progress Bar
+// 
+
+// colors 
+$dark-grayish-green: #a5b1a1;
+
+.scroll-container {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 52px;
+
+    width: 20px;
+    height: 100vh;
+
+    .scroll-bar {
+        width: 100%;
+        height: 0%;
+
+        background-color: $dark-grayish-green;
+    }
+}

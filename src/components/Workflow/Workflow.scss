@@ -1,0 +1,57 @@
+// 
+// Workflow Page Desktop Style
+// 
+
+// colors
+$off-white: #fffaef;
+$dark-grayish-green: #a5b1a1;
+$very-dark-gray: #242424;
+
+#workflow-container {
+    position: relative;
+    width: 100vw;
+    font-family: "Work Sans";
+    color: $very-dark-gray;
+
+    .workflow-background {
+
+        .line {
+            position: absolute;
+
+            left: 50px;
+            width: 20px;
+            height: 460vh;
+            background-color: transparent;
+            border-left: 2px solid $very-dark-gray;
+            border-right: 2px solid $very-dark-gray;
+        }
+
+        .title-marquee {
+            z-index: 1;
+            position: absolute;
+            bottom: 0;
+            width: 20px;
+            height: 460vh;
+            left: 52px;
+            white-space: nowrap;
+            font-size: 14px;
+            text-transform: uppercase;
+            overflow: hidden;
+    
+            .title-content {
+                display: block;
+                position: relative;
+                animation: marquee 50s linear infinite;
+    
+                .workflow-title {
+                    width: 20px;
+    
+                    p {
+                        margin-bottom: 115px;
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+    }
+}

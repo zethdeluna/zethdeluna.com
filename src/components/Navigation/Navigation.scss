@@ -1,96 +1,296 @@
-//
-// Navigation Style
-// 
 
-// START NAVIGATION STYLE
+// colors
+$off-white: #fffaef;
+$dark-grayish-green: #a5b1a1;
+$very-dark-gray: #242424;
 
-#navbar {
-    display: flex;
-    flex-direction: row;
+.nav-container {
+    z-index: 24;
     position: fixed;
+    top: -100vh;
+
+    z-index: 24;
     width: 100vw;
-    height: 15vh;
-    z-index: 240;
-    align-items: center;
-    // background: rgba(200, 200, 200, 0.5);
+    height: 100vh;
 
-    #myName {
-      font-weight: bold;
-      font-size: 24px;
-      text-transform: lowercase;
-      letter-spacing: 4px;
-      display: flex;
-      position: relative;
-      align-items: center;
-      height: 100%;
-      width: 45%;
-      background: none;
-      border: none;
-      color: inherit;
-      margin: 0;
-      padding-top: 2px;
-      padding-left: 5%;
-      // background-color: rgba(255, 0, 0, 0.4);
+    background-color: $off-white;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 400ms ease-in-out;
 
-      .AnchorLink {
-        transition: all 400ms ease;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) 330px 50px minmax(0, 1fr);
+    grid-column: 100%;
 
-        &:hover {
-          color: #3d3d3d;
+    .nav-items {
+        grid-row: 2;
+        grid-column: 1;
+        justify-self: center;
+        align-self: center;
+
+        list-style: none;
+
+        // background-color: red;
+        height: 0;
+        // height: 210px;
+        width: 500px;
+        overflow: hidden;
+        transition: height 400ms ease-in-out;
+
+        li {
+            margin-bottom: -36px;
+            text-align: center;
+            text-justify: center;
+            
+            a {
+                position: relative;
+
+                font-size: 80px;
+                font-weight: 600;
+                letter-spacing: -8px;
+                // background-color: rgba($very-dark-gray, 0.2);
+                
+                text-decoration: none;
+                color: $very-dark-gray;
+
+                transition: all 200ms ease-in-out;  
+
+                &.strikeIn::after {
+                    content: "";
+                    position: absolute;
+                    top: 37.5%;
+                    left: 0;
+                    width: 100%;
+                    height: 20px;
+                    background-color: $very-dark-gray;
+                    animation: strikeIn 200ms ease-in-out;
+                    animation-iteration-count: 1;
+                }
+
+                &.strikeOut::after {
+                    content: "";
+                    position: absolute;
+                    top: 37.5%;
+                    left: 0;
+                    width: 100%;
+                    height: 20px;
+                    background-color: $very-dark-gray;
+                    animation: strikeOut 200ms ease-in-out;
+                    animation-iteration-count: 1;
+                }
+            }
         }
-      }
     }
-  
-    ul {
-      list-style: none;
-      font-size: 24px;
-      display: flex;
-      position: relative;
-      height: 100%;
-      width: 50%;
-      margin: 0;
-      align-items: center;
-      justify-content: flex-end;
-      padding-right: 5%;
-      // background-color: rgba(0, 0, 255, 0.4);
-  
-      li {
-        display: inline-block;
-        padding: 0 12px;
 
-        .AnchorLink {
-          font-weight: bold;
-          letter-spacing: 4px;
-          transition: all 400ms ease;
+    .nav-box {
+        position: absolute;
+        justify-self: center;
+        align-self: center;
+        
+        opacity: 0;
+        transition: opacity 400ms ease-in-out;
 
-          &:hover {
-            color: #3d3d3d;
-          }
-        }
-  
-        i {
-          display: inline-block;
-          transition: all 400ms ease;
-        }
-        i:hover {
-          color: #3d3d3d;
-          transform: rotate(360deg);
-          -webkit-transform: rotate(360deg);
-        }
+        .line {
+            width: 600px;
+            height: 2px;
+            background-color: $very-dark-gray;
 
-        #frontendMentorLogo {
-          margin-top: 5px;
-          width: 24px;
-          transition: all 400ms ease;
-          // transform-origin: 24px 29px;
+            transition: transform 400ms ease-in-out;
 
-          &:hover {
-            filter: invert(70%);
-            transform: rotate(360deg);
-            -webkit-transform: rotate(360deg);
-          }
+            // &:nth-child(1) {
+            //     transform: translateY(-180px);
+            // }
+            // &:nth-child(2) {
+            //     transform: translateY(135px);
+            // }
         }
-      }
-      
+    }
+
+    .my-links {
+        grid-row: 3;
+        grid-column: 1;
+        justify-self: center;
+        align-self: center;
+
+        list-style: none;
+
+        transform: translateY(-20px);
+        opacity: 0;
+        transition: transform 400ms ease-in-out, opacity 400ms ease-in-out;
+
+        li {
+            display: inline-block;
+            padding: 0 27px;
+
+            .link {
+                z-index: 2;
+                position: relative;
+                font-size: 12px;
+                text-decoration: none;
+                color: $very-dark-gray;
+
+                cursor: pointer;
+
+                &.hoverIn::after {
+                    z-index: 1;
+                    position: absolute;
+                    content: "hello there";
+                    white-space: nowrap;
+                    top: -15px;
+                    right: 0;
+                    color: $dark-grayish-green;
+                    animation: linkIn 200ms ease-in-out;
+                    animation-iteration-count: 1;
+
+                    pointer-events: none;
+                }
+                &.hoverOut::after {
+                    z-index: 1;
+                    position: absolute;
+                    content: "hello there";
+                    white-space: nowrap;
+                    top: -15px;
+                    right: 0;
+                    color: $dark-grayish-green;
+                    animation: linkOut 200ms ease-in-out;
+                    animation-iteration-count: 1;
+
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+
+    .email-alert {
+        grid-row: 4;
+        grid-column: 1;
+        justify-self: center;
+        align-self: start;
+
+        font-size: 12px;
+
+        opacity: 0;
+        transition: all 400ms ease-in-out;
+        -webkit-transition: all 400ms ease-in-out;
+    }
+}
+
+// MENU BUTTON
+// -----------------------------------------
+.menu-btn {
+    z-index: 25;
+    position: fixed;
+    top: 15.556vh;
+    right: 0;
+
+    width: 80px;
+    height: 20px;
+    opacity: 0;
+
+    border: none;
+    background-image: linear-gradient(
+        to bottom,
+        $very-dark-gray 0%,
+        $very-dark-gray 50%,
+        $dark-grayish-green 50%,
+        $dark-grayish-green 100%
+    );
+    background-size: 80px 40px;
+    transition: 
+        background-position 200ms ease-in-out,
+        color 200ms ease-in-out,
+        opacity 1s ease-in-out;
+    transition-delay: 100ms;
+
+    font-family: "Work Sans";
+    font-weight: 600;
+    font-size: 12px;
+    color: $off-white;
+    // letter-spacing: 10px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+        color: $very-dark-gray;
+        background-position: -100% 100%;
+    }
+
+    &.hover__active {
+        color: $very-dark-gray;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &.hide-text {
+        color: transparent;
+    }
+}
+
+.left-block {
+    z-index: 25;
+    position: fixed;
+    top: 15.556vh;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+
+    border: none;
+    background-image: linear-gradient(
+        to bottom,
+        $very-dark-gray 0%,
+        $very-dark-gray 50%,
+        $dark-grayish-green 50%,
+        $dark-grayish-green 100%
+    );
+    background-size: 80px 40px;
+    transition: 
+        background-position 200ms ease-in-out,
+        opacity 1s ease-in-out;
+    transition-delay: 100ms;
+
+    &.hover__active {
+        background-position: -100% 100%;
+    }
+}
+
+.menu-btn-enter {
+    opacity: 1;
+}
+// -----------------------------------------
+
+// animations
+@keyframes strikeIn {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
+}
+@keyframes strikeOut {
+    0% { transform: scaleX(1); }
+    100% { transform: scaleX(0); }
+}
+
+@keyframes linkIn {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+    100% {
+        top: -15px;
+        opacity: 1;
+    }
+}
+@keyframes linkOut {
+    0% {
+        top: -15px;
+        opacity: 1;
+    }
+    100% {
+        top: 0;
+        opacity: 0;
     }
 }

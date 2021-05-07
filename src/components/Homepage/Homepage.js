@@ -6,48 +6,85 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 function Homepage() {
-    const homepageRef = useRef();
-    const openingRef = useRef();
-    const descrRef = useRef();
-    const picRef = useRef();
+    // vertical text scroller marquee
+    // ******************************
+    const homeTitleRef = useRef();
+
+    const content = "<p>front-end developer</p>"
+    useEffect(() => {
+        for (let i = 0; i < 30; i++) {
+            homeTitleRef.current.innerHTML += content;
+        }
+    });
+    // ******************************
+
+    // name effect on load
+    // ******************************
+    const homeRef = useRef();
+    const lineTopRef = useRef();
+    const lineBotRef = useRef();
 
     useEffect(() => {
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: homepageRef.current,
-                start: "top bottom",
-                end: "bottom center",
-                scrub: true,
-                // markers: true
-            }
-        })
-        .to([openingRef.current, descrRef.current, picRef.current], {autoAlpha: 0.5})
-        .to([openingRef.current, descrRef.current, picRef.current], {autoAlpha: 1})
-        .to([openingRef.current, descrRef.current, picRef.current], {autoAlpha: 0})
+        const home = homeRef.current;
+        const lineTop = lineTopRef.current;
+        const lineBot = lineBotRef.current;
+
+        // name.classList.add("name-enter");
+        setTimeout(() => {
+            home.classList.add("home-enter");
+        }, 500);
+
+        setTimeout(() => {
+            lineTop.classList.add("line-top-enter");
+            lineBot.classList.add("line-bot-enter")
+        }, 1500);
     })
+    // ******************************
+
+    // scroll effects
+    // ------------------------------
+    useEffect(() => {
+        const home = homeRef.current;
+        const lineTop = lineTopRef.current;
+        const lineBot = lineBotRef.current;
+
+        const centerLineTL = gsap.timeline({
+            scrollTrigger: {
+                trigger: home,
+                start: "bottom bottom",
+                end: "bottom 37%",
+                scrub: true
+            }
+        });
+
+        // centerLineTL.to(lineTop, {x: "200px"});
+        // centerLineTimeline.to(lineBot, {x: "-200px"}, 0);
+        centerLineTL.to(lineTop, { scaleY: 0 })
+        centerLineTL.to(lineBot, { y: "80vh", scaleY: 0 }, 0);
+
+    })
+    // ------------------------------
 
     return (
-        <div ref={homepageRef} id="homepage">
-            {/* header text */}
-            <div id="myOpening">
-                <h2 ref={openingRef}>
-                    My name is <span>Zeth</span>,
-                    <br/>
-                    born and raised in <span>Los Angeles</span>.
-                </h2>
+        <div ref={homeRef} className="homepage-container">
+            <div className="home-background">
+                <div className="line"></div>
             </div>
-            <div ref={picRef} id="homeDescription">
-                <div id="me"/>
-                <h2 ref={descrRef}>
-                    I am a <span>creative</span>
-                    <br/>
-                    aspiring <span>front-end developer</span>
-                    <br/>
-                    and <span>designer</span>.
-                </h2>
+            <div className="my-name">
+                <p>
+                    <span>Z</span><span>et</span><span>h</span><span> De</span><span> Lu</span><span>na</span>
+                </p>
+            </div>
+            <div ref={lineTopRef} className="center-line1"></div>
+            <div ref={lineBotRef} className="center-line2"></div>
+            <div className="home-marquee">
+                <div className="home-marquee--content">
+                    <span ref={homeTitleRef}>
+                    </span>
+                </div>
             </div>
         </div>
     )
 }
 
-export default Homepage
+export default Homepage;

@@ -1,12 +1,6 @@
 export { default as Navigation } from './Navigation/Navigation.js';
-export { default as NavigationMobile } from './Navigation/NavigationMobile.js';
-export { default as Hello } from './Hello/Hello.js';
-export { default as HelloMobile } from './Hello/HelloMobile.js';
 export { default as Homepage } from './Homepage/Homepage.js';
-export { default as HomepageMobile } from './Homepage/HomepageMobile.js';
 export { default as About } from './About/About.js';
-export { default as AboutMobile } from './About/AboutMobile.js';
+export { default as Workflow } from './Workflow/Workflow.js';
 export { default as Projects } from './Projects/Projects.js';
-export { default as ProjectsMobile } from './Projects/ProjectsMobile.js';
-export { default as Contact } from './Contact/Contact.js';
-export { default as ContactMobile } from './Contact/ContactMobile.js';
+export { default as ScrollProgress } from './ScrollProgress/ScrollProgress.js';
