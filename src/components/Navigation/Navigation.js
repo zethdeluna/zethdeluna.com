@@ -267,6 +267,8 @@ function Navigation2() {
 
     // fade in on load
     // ----------------------------------
+    const frontLinksRef = useRef();
+
     useEffect(() => {
         const menuBtn = menuBtnRef.current;
         const leftBlock = leftBlockRef.current;
