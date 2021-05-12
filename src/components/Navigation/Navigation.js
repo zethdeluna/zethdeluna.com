@@ -233,6 +233,8 @@ function Navigation2() {
 
     // copy email on click
     // ----------------------------------  
+
+    // menu email
     const testAlertRef = useRef();
 
     const copyEmail = () => {
@@ -246,6 +248,21 @@ function Navigation2() {
             testAlert.style.opacity = "0";
         }, 1000)
     }
+
+    // front email
+    const frontEmailAlertRef = useRef();
+
+    const copyFrontEmail = () => {
+        const email = "zeth.anthony.deluna@gmail.com";
+
+        navigator.clipboard.writeText(email);
+
+        const frontAlert = frontEmailAlertRef.current;
+        frontAlert.style.opacity = "1";
+        setTimeout(() => {
+            frontAlert.style.opacity = "0";
+        }, 1000);
+    }
     // ----------------------------------
 
     // fade in on load
@@ -253,10 +270,12 @@ function Navigation2() {
     useEffect(() => {
         const menuBtn = menuBtnRef.current;
         const leftBlock = leftBlockRef.current;
+        const frontLinks = frontLinksRef.current;
 
         setTimeout(() => {
             menuBtn.classList.add("menu-btn-enter");
             leftBlock.classList.add("menu-btn-enter");
+            frontLinks.classList.add("enter");
         }, 400);
     })
     // ----------------------------------
@@ -285,6 +304,20 @@ function Navigation2() {
             <p ref={testAlertRef} className="email-alert">You copied my email...</p>
 
         </div>
+        <ul ref={frontLinksRef} className="front-links">
+            <li>
+                <span onClick={copyFrontEmail}>Email</span>
+            </li>
+            <li>
+                <a href="https://github.com/zethdeluna" target="_blank" rel="noreferrer">GitHub</a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/zethdeluna/" target="_blank" rel="noreferrer">LinkedIn</a>
+            </li>
+        </ul>
+        <span className="front-email-alert">
+            <p ref={frontEmailAlertRef}>Copied</p>
+        </span>
         <button ref={menuBtnRef} onClick={toggleMenu} className="menu-btn">menu</button>
         <div ref={leftBlockRef} className="left-block"></div>
         </>
