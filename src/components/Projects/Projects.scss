@@ -10,28 +10,29 @@ $very-dark-gray: #242424;
 #projects-container {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 120vh;
     color: $very-dark-gray;
 
     .projects-background {
         
         .line {
+            z-index: 10;
             position: absolute;
 
             left: 50px;
             width: 20px;
-            height: 100vh;
+            height: 120vh;
             background-color: transparent;
             border-left: 2px solid $very-dark-gray;
             border-right: 2px solid $very-dark-gray;
         }
 
         .title-marquee {
-            z-index: 1;
+            z-index: 10;
             position: absolute;
             bottom: 0;
             width: 20px;
-            height: 100vh;
+            height: 120vh;
             left: 52px;
             white-space: nowrap;
             font-size: 14px;
@@ -56,9 +57,14 @@ $very-dark-gray: #242424;
     }
 
     .projects-content {
-        position: relative;
+        z-index: 1;
+        position: fixed;
         width: 100vw;
         height: 100vh;
+
+        background-color: $off-white;
+
+        top: 0;
 
         display: grid;
         grid-template-columns: 74px minmax(0, 1fr) 43.889% minmax(0, 1fr);
@@ -67,10 +73,11 @@ $very-dark-gray: #242424;
 
         opacity: 0;
         transition: 
-            opacity 1s ease-in-out,
-            transform 1s ease-in-out;
+            opacity 400ms ease-in-out,
+            transform 400ms ease-in-out;
 
         &.open {
+            z-index: 3;
             opacity: 1;
             transform: translateY(0);
         }
@@ -89,6 +96,13 @@ $very-dark-gray: #242424;
             font-weight: 400;
 
             border: 2px solid $very-dark-gray;
+
+            transform: translateX(-100px);
+            transition: transform 400ms ease-in-out;
+
+            &.open {
+                transform: translateX(0);
+            }
         }
         .title-bottom {
             grid-column: 3;
@@ -101,7 +115,13 @@ $very-dark-gray: #242424;
             color: $off-white;
 
             background-color: $very-dark-gray;
-            transform: scale(1, -1);
+            transform: scale(1, -1) translateX(100px);
+
+            transition: transform 400ms ease-in-out;
+
+            &.open {
+                transform: scale(1, -1) translateX(0);
+            }
         }
 
         .click-note {
@@ -119,7 +139,6 @@ $very-dark-gray: #242424;
             grid-row: 3;
             align-self: start;
             justify-self: center;
-            // margin-right: 93px;
             margin-top: 5px;
 
             font-size: 10px;

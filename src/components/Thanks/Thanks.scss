@@ -1,0 +1,168 @@
+// 
+// Thank You Page
+// 
+
+// colors
+$off-white: #fffaef;
+$dark-grayish-green: #a5b1a1;
+$very-dark-gray: #242424;
+
+.thanks-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    font-family: "Work Sans";
+    color: $very-dark-gray;
+
+    .thanks-background {
+
+        .line {
+            z-index: 10;
+            position: absolute;
+            left: 50px;
+            width: 20px;
+            height: 100vh;
+            background-color: transparent;
+            border-left: 2px solid $very-dark-gray;
+            border-right: 2px solid $very-dark-gray;
+        }
+
+        .title-marquee {
+            z-index: 10;
+            position: absolute;
+            bottom: 0;
+            width: 20px;
+            height: 100vh;
+            left: 52px;
+            white-space: nowrap;
+            font-size: 14px;
+            overflow: hidden;
+
+            .title-content {
+                display: block;
+                position: relative;
+                animation: marquee 50s linear infinite;
+
+                span {
+                    width: 20px;
+
+                    p {
+                        margin-bottom: 115px;
+                        transform: rotate(90deg);
+                        color: $very-dark-gray;
+                    }
+                }
+            }
+        }
+    }
+
+    .thanks-content {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+
+        top: 0;
+
+        display: grid;
+        grid-template-columns: 74px minmax(0, 1fr);
+        grid-template-rows: 150px minmax(0, 1fr) 50%;
+
+        .thanks-statement {
+            grid-column: 2;
+            grid-row: 1;
+            justify-self: center;
+            align-self: end;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            opacity: 0;
+            transform: translateY(50px);
+            transition: 
+                opacity 600ms ease-in-out,
+                transform 600ms ease-in-out;
+
+            &.open {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact {
+            grid-column: 2;
+            grid-row: 2;
+            justify-self: center;
+            align-self: end;
+
+            font-size: 100px;
+            font-weight: 400;
+
+            opacity: 0;
+            transition: opacity 600ms ease-in-out;
+
+            &.open {
+                opacity: 1;
+            }
+        }
+
+        .contact-line {
+            grid-column: 2;
+            grid-row: 3;
+            justify-self: end;
+            align-self: start;
+
+            width: 0;
+            height: 2px;
+            margin-right: 28vw;
+
+            background-color: $very-dark-gray;
+
+            transition: width 1s ease-in-out;
+
+            &.open {
+                width: 100vw;
+            }
+        }
+
+        .side-line {
+            grid-column: 1;
+            grid-row: 1 / 4;
+            align-self: center;
+            position: absolute;
+            left: 30px;
+
+            width: 2px;
+            height: 0;
+            background-color: $very-dark-gray;
+
+            transition: height 600ms ease-in-out 600ms;
+
+            &.open {
+                height: 242px;
+            }
+        }
+    }
+}
+
+// MEDIA QUERIES
+// ---------------------------------------
+@media (max-width: 1150px) {
+    .thanks-container {
+        .thanks-content {
+            .contact {
+                font-size: 80px;
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .thanks-container {
+        .thanks-content {
+            .contact {
+                font-size: 60px;
+            }
+        }
+    }
+}
+// ---------------------------------------

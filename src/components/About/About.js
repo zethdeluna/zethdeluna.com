@@ -166,10 +166,9 @@ function About() {
         gsap.timeline({
             scrollTrigger: {
                 trigger: aboutContainer,
-                start: "top 30%",
-                end: "bottom -2000%",
-                toggleClass: {targets: targets, className: "open"},
-                // markers: true
+                start: "top top",
+                end: "bottom top",
+                toggleClass: {targets: targets, className: "open"}
             }
         });
     })

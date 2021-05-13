@@ -273,10 +273,13 @@ $very-dark-gray: #242424;
     left: 0;
     width: 20px;
     height: 242px;
+    padding-right: 10px;
 
     list-style: none;
     text-align: center;
     transform: translateY(-50%);
+
+    background-color: $off-white;
 
     opacity: 0;
     transition: opacity 1s ease-in-out;

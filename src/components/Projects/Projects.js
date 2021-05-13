@@ -473,27 +473,29 @@ function Projects() {
     // ---------------------------
     const containerRef = useRef();
     const contentRef = useRef();
+    const titleTopRef = useRef();
+    const titleBotRef = useRef();
     
     useEffect(() => {
         const container = containerRef.current;
         const content = contentRef.current;
+        const titleTop = titleTopRef.current;
+        const titleBot = titleBotRef.current;
+
+        const targets = [
+            content,
+            titleTop,
+            titleBot
+        ];
 
         gsap.timeline({
             scrollTrigger: {
                 trigger: container,
-                start: "top 50%",
-                end: "top -2000%",
+                start: "top top",
+                end: "bottom top",
                 scrub: true,
-                toggleClass: {targets: content, className: "open"},
+                toggleClass: {targets: targets, className: "open"},
                 // markers: true
-            }
-        });
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: container,
-                start: "bottom 50%",
-                end: "bottom -2000%",
-                toggleClass: {targets: content, className: "close"}
             }
         });
     })
@@ -512,8 +514,8 @@ function Projects() {
             </div>
 
             <div ref={contentRef} className="projects-content">
-                <h2 className="title-top">"work"</h2>
-                <h2 className="title-bottom">"work"</h2>
+                <h2 ref={titleTopRef} className="title-top">"work"</h2>
+                <h2 ref={titleBotRef} className="title-bottom">"work"</h2>
 
                 <p className="click-note">Click project for more</p>
                 <div className="projects-scroller">

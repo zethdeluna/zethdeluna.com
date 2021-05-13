@@ -10,30 +10,30 @@ $very-dark-gray: #242424;
 #about-container {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 120vh;
     font-family: "Work Sans";
     color: $very-dark-gray;
 
     .about-background {
 
         .line {
+            z-index: 10;
             position: absolute;
 
             left: 50px;
             width: 20px;
-            height: 100vh;
+            height: 120vh;
             background-color: transparent;
             border-left: 2px solid $very-dark-gray;
             border-right: 2px solid $very-dark-gray;
-            // border-bottom: 1px solid $very-dark-gray;
         }
 
         .title-marquee {
-            z-index: 1;
+            z-index: 10;
             position: absolute;
             bottom: 0;
             width: 20px;
-            height: 100vh;
+            height: 120vh;
             left: 52px;
             white-space: nowrap;
             font-size: 14px;
@@ -59,9 +59,12 @@ $very-dark-gray: #242424;
     }
 
     .about-content {
-        position: relative;
+        z-index: 2;
+        position: fixed;
         width: 100vw;
         height: 100vh;
+
+        top: 0;
         
         display: grid;
         grid-template-columns: 74px 111px minmax(0, 1fr) 111px;
@@ -255,11 +258,14 @@ $very-dark-gray: #242424;
             align-items: center;
 
             opacity: 0;
-            transition: opacity 1s ease-in-out;
-            // transition-delay: 600ms;
+            transform: translateX(50px);
+            transition: 
+                opacity 400ms ease-in-out,
+                transform 400ms ease-in-out;
 
             &.open {
                 opacity: 1;
+                transform: translateX(0);
             }
 
             .title-left {
@@ -268,7 +274,6 @@ $very-dark-gray: #242424;
                 text-transform: uppercase;
                 
                 border: 2px solid $very-dark-gray;
-                // margin-bottom: 16.667vh;
                 margin-left: 19px;
                 white-space: nowrap;
                 transform: rotate(90deg);
@@ -283,11 +288,14 @@ $very-dark-gray: #242424;
             align-self: center;
 
             opacity: 0;
-            transition: opacity 1s ease-in-out;
-            // transition-delay: 600ms;
+            transform: translateX(-50px);
+            transition: 
+                opacity 400ms ease-in-out,
+                transform 400ms ease-in-out;
 
             &.open {
                 opacity: 1;
+                transform: translateX(0);
             }
 
             .title-right {
@@ -358,7 +366,6 @@ $very-dark-gray: #242424;
                 font-family: "Work Sans";
                 font-weight: 400;
                 font-size: 12px;
-                // letter-spacing: 2px;
                 text-transform: uppercase;
 
                 border: none;
@@ -437,7 +444,6 @@ $very-dark-gray: #242424;
                             font-size: 12px;
                             font-weight: 600;
                             color: $very-dark-gray;
-                            // letter-spacing: 2px;
                             white-space: nowrap;
                             padding-right: 25px;
 
@@ -475,7 +481,6 @@ $very-dark-gray: #242424;
                             font-size: 12px;
                             font-weight: 600;
                             color: $very-dark-gray;
-                            // letter-spacing: 2px;
                             white-space: nowrap;
                             padding-right: 25px;
                         }
@@ -489,50 +494,29 @@ $very-dark-gray: #242424;
             grid-row: 2;
             justify-self: center;
             align-self: center;
-            // margin-top: 70px;
 
             display: flex;
             justify-content: center;
             align-items: center;
 
-            // width: 270px;
-            width: 0;
             height: 195px;
             overflow: hidden;
-            border-left: 2px solid $very-dark-gray;
-            border-right: 2px solid $very-dark-gray;
 
             font-size: 12px;
             font-weight: 400;
             line-height: 24px;
-            // text-align: center;
             text-transform: none;
             font-variant: small-caps;
 
-            transition: 
-                width 1s ease-in-out,
-                border 1s ease-in-out;
+            opacity: 0;
+            transition: opacity 400ms ease-in-out;
 
             &.open {
-                width: 68.5vw;
-                border-left: 2px solid $off-white;
-                border-right: 2px solid $off-white;
+                opacity: 1;
             }
 
             p {
-                // width: 600px;
-                height: 120px;
-
                 white-space: nowrap;
-
-                overflow: hidden;
-                opacity: 0;
-                transition: opacity 1s ease-in-out;
-                // transition-delay: 200ms;
-
-                &.open {
-                    opacity: 1;
-                }
             }
         }
     }

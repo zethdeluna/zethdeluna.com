@@ -6,7 +6,8 @@ import {
   About,
   Workflow,
   Projects,
-  ScrollProgress
+  ScrollProgress,
+  Thanks
  } from './components';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <About/>
       <Projects/>
       <Workflow/>
+      <Thanks/>
     </div>
   );
 }

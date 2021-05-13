@@ -43,40 +43,52 @@ function Homepage() {
 
     // scroll effects
     // ------------------------------
+    const nameRef = useRef();
+
     useEffect(() => {
         const home = homeRef.current;
         const lineTop = lineTopRef.current;
         const lineBot = lineBotRef.current;
+        const name = nameRef.current;
 
         const centerLineTL = gsap.timeline({
             scrollTrigger: {
                 trigger: home,
                 start: "bottom bottom",
-                end: "bottom 37%",
-                scrub: true
+                end: "bottom top",
+                scrub: true,
             }
         });
 
-        // centerLineTL.to(lineTop, {x: "200px"});
-        // centerLineTimeline.to(lineBot, {x: "-200px"}, 0);
-        centerLineTL.to(lineTop, { scaleY: 0 })
-        centerLineTL.to(lineBot, { y: "80vh", scaleY: 0 }, 0);
+        centerLineTL.to(lineTop, { translateY: "-40vh" });
+        centerLineTL.to(lineBot, { translateY: "40vh" }, 0);
 
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: home,
+                start: "bottom top",
+                end: "bottom -2000%",
+                toggleClass: { targets: name, className: "close"}
+            }
+        });
     })
     // ------------------------------
 
     return (
+        <>
         <div ref={homeRef} className="homepage-container">
             <div className="home-background">
                 <div className="line"></div>
             </div>
-            <div className="my-name">
-                <p>
-                    <span>Z</span><span>et</span><span>h</span><span> De</span><span> Lu</span><span>na</span>
-                </p>
+            <div className="homepage-content">
+                <div ref={nameRef} className="my-name">
+                    <p>
+                        <span>Z</span><span>et</span><span>h</span><span> De</span><span> Lu</span><span>na</span>
+                    </p>
+                </div>
+                <div ref={lineTopRef} className="center-line1"></div>
+                <div ref={lineBotRef} className="center-line2"></div>
             </div>
-            <div ref={lineTopRef} className="center-line1"></div>
-            <div ref={lineBotRef} className="center-line2"></div>
             <div className="home-marquee">
                 <div className="home-marquee--content">
                     <span ref={homeTitleRef}>
@@ -84,6 +96,7 @@ function Homepage() {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 
