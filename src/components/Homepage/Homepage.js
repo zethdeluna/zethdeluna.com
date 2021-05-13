@@ -23,11 +23,13 @@ function Homepage() {
     const homeRef = useRef();
     const lineTopRef = useRef();
     const lineBotRef = useRef();
+    const scrollMoreRef = useRef();
 
     useEffect(() => {
         const home = homeRef.current;
         const lineTop = lineTopRef.current;
         const lineBot = lineBotRef.current;
+        const scrollMore = scrollMoreRef.current;
 
         // name.classList.add("name-enter");
         setTimeout(() => {
@@ -38,6 +40,10 @@ function Homepage() {
             lineTop.classList.add("line-top-enter");
             lineBot.classList.add("line-bot-enter")
         }, 1500);
+
+        setTimeout(() => {
+            scrollMore.classList.add("open");
+        }, 2100)
     })
     // ******************************
 
@@ -50,6 +56,7 @@ function Homepage() {
         const lineTop = lineTopRef.current;
         const lineBot = lineBotRef.current;
         const name = nameRef.current;
+        const scrollMore = scrollMoreRef.current;
 
         const centerLineTL = gsap.timeline({
             scrollTrigger: {
@@ -62,6 +69,15 @@ function Homepage() {
 
         centerLineTL.to(lineTop, { translateY: "-40vh" });
         centerLineTL.to(lineBot, { translateY: "40vh" }, 0);
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: home,
+                start: "5% top",
+                end: "bottom -2000%",
+                toggleClass: {targets: scrollMore, className: "close"},
+            }
+        })
 
         gsap.timeline({
             scrollTrigger: {
@@ -88,6 +104,7 @@ function Homepage() {
                 </div>
                 <div ref={lineTopRef} className="center-line1"></div>
                 <div ref={lineBotRef} className="center-line2"></div>
+                <p ref={scrollMoreRef} className="scroll-more">Scroll down for more</p>
             </div>
             <div className="home-marquee">
                 <div className="home-marquee--content">

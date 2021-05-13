@@ -108,6 +108,27 @@ $very-dark-gray: #242424;
                 height: 100%;
             }
         }
+
+        .scroll-more {
+            grid-column: 2;
+            grid-row: 5;
+            justify-self: center;
+            align-self: center;
+
+            font-size: 12px;
+            font-weight: 400;
+
+            opacity: 0;
+            transition: opacity 400ms ease-in-out;
+
+            &.open {
+                opacity: 1;
+            }
+
+            &.close {
+                opacity: 0;
+            }
+        }
     }
 
     .home-marquee {
