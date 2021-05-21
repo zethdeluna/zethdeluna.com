@@ -15,6 +15,7 @@ $dark-grayish-green: #a5b1a1;
 }
 
 body {
+  z-index: 1;
   background-color: $off-white;
   text-transform: uppercase;
   font-variant-numeric: slashed-zero;
