@@ -1,21 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect, createContext, useContext } from 'react';
 import './App.scss';
 import { 
-  Navigation,
-  Homepage,
-  About,
-  Workflow,
-  Projects,
+  Navigation, NavigationMobile,
+  Homepage, HomepageMobile,
+  About, AboutMobile,
+  Workflow, WorkflowMobile,
+  Projects, ProjectsMobile,
   ScrollProgress,
-  Thanks
- } from './components';
+  Thanks, ThanksMobile
+} from './components';
 
-function App() {
+// for viewing mobile vs desktop version
+// ---------------------------------------
+const viewportContext = createContext();
 
-  // const breakpoint = 850;
+// for handling window resizing
+const ViewportProvider = ({children}) => {
+  const [width, setWidth] = useState(window.innerWidth);
+  const [height, setHeight] = useState(window.innerHeight);
+  const handleWindowResize = () => {
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowResize);
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
 
   return (
-    <div className="App">
+    <viewportContext.Provider value={{ width, height }}>
+      {children}
+    </viewportContext.Provider>
+  );
+};
+
+// get current viewport dimensions
+const useViewport = () => {
+  const { width, height } = useContext(viewportContext);
+  return { width, height };
+};
+
+// desktop version
+const Desktop = () => {
+  return (
+    <>
       <ScrollProgress/>
       <Navigation/>
       <Homepage/>
@@ -23,6 +52,41 @@ function App() {
       <Projects/>
       <Workflow/>
       <Thanks/>
+    </>
+  );
+};
+
+// mobile version
+const Mobile = () => {
+  return (
+    <>
+      <ScrollProgress/>
+      <NavigationMobile/>
+      <HomepageMobile/>
+      <AboutMobile/>
+      <ProjectsMobile/>
+      <WorkflowMobile/>
+      <ThanksMobile/>
+    </>
+  );
+};
+
+// display desktop or mobile
+const Webpage = () => {
+  const { width } = useViewport();
+  const breakpoint = 900;
+
+  return width < breakpoint ? Mobile() : Desktop();
+};
+
+// ---------------------------------------
+
+function App() {
+  return (
+    <div className="App">
+      <ViewportProvider>
+        <Webpage/>
+      </ViewportProvider>
     </div>
   );
 }

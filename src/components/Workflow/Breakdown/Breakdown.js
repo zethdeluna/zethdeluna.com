@@ -57,7 +57,7 @@ function TheBreakdown() {
     return (
         <div ref={containerRef} className="breakdown-container">
             <div ref={contentRef} className="breakdown-content">
-                <div ref={titleRef}a className="breakdown-title">
+                <div ref={titleRef} className="breakdown-title">
                     <h2 className="number">01.</h2>
                     <div className="underline"></div>
                     <h3 className="name">Breakdown</h3>
@@ -72,7 +72,7 @@ function TheBreakdown() {
                             <li>content</li>
                             <li>pages</li>
                             <li>purpose</li>
-                            <li>interatctions</li>
+                            <li>interactions</li>
                             <li>elements</li>
                             <li>components</li>
                         </ul>

@@ -1,0 +1,57 @@
+// 
+// Workflow Page Mobile Style
+// 
+
+// colors
+$off-white: #fffaef;
+$dark-grayish-green: #a5b1a1;
+$very-dark-gray: #242424;
+
+#workflow-container-mobile {
+    position: relative;
+    width: 100vw;
+    height: 600vh;
+    font-family: "Work Sans";
+    color: $very-dark-gray;
+
+    .workflow-background-mobile {
+
+        .line {
+            z-index: 10;
+            position: absolute;
+
+            left: 0;
+            width: 20px;
+            height: 600vh;
+            background-color: transparent;
+            border-right: 2px solid $very-dark-gray;
+        }
+
+        .title-marquee {
+            z-index: 10;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 20px;
+            height: 600vh;
+
+            font-size: 14px;
+            overflow: hidden;
+            white-space: nowrap;
+
+            .title-content {
+                display: block;
+                position: relative;
+
+                .title {
+                    width: 20px;
+
+                    p {
+                        margin-bottom: 115px;
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -237,7 +237,7 @@ function About() {
                         I'm Zeth &mdash; freelance front-end developer with a background in physics. I love <br/>
                         bringing pleasing UI/UX designs to life & love everything about clean, beautiful <br/>
                         typography. With my self-starter mentality & my keen attention to detail, I'm <br/>
-                        capable of turning website designs into functional and responsive websites.
+                        capable of turning website designs into functional & responsive websites.
                     </p>
                 </div>
             </div>

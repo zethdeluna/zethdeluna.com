@@ -113,7 +113,7 @@ function Projects() {
                 "My Website Preview",
                 "Zeth <br/> De Luna",
                 "A clean, custom portfolio website that reflects my approach to design and web development.",
-                "/",
+                "https://github.com/zethdeluna/zethdeluna.com",
                 "/"
             );
         };
@@ -254,7 +254,6 @@ function Projects() {
         const date = project.querySelector(".date");
         const description = project.querySelector(".box-description");
         const image1 = project.querySelector(".box-img");
-        // const oneLiner = project.querySelector(".one-liner");
 
         setTimeout(() => {
             projectBox.style.width = "720px";
@@ -532,7 +531,7 @@ function Projects() {
                 <p className="scroll-note">Scroll for more</p>
 
                 <div className="hero-box">
-                    <img ref={heroBoxImgRef} src={placeholder} alt="hero-placeholder"/>
+                    <img ref={heroBoxImgRef} src={placeholder} alt="hero placeholder"/>
                 </div>
 
                 <div className="project-description">
@@ -571,7 +570,7 @@ function Projects() {
                 </div>
                 <div className="challenges">
                     <h3 className="challenges-header">Challenges</h3>
-                    <p className="challenges-content">Although I know how to appreciate good design, designing for myself lead to at least 40 drafts on the chopping block until I was able to come to the final design. I wanted my website to have smooth, satisfying transitions &mdash; specifically when opening the menu or a project, where they would fade in and be revealed behind some "sliding doors". Setting up the carefully timed transitions for each element was a great opportunity for me to solidify my understanding of JavaScript and React Hooks.</p>
+                    <p className="challenges-content">Although I know how to appreciate good design, designing for myself led to at least 40 drafts on the chopping block until I was able to come to the final design. I wanted my website to have smooth, satisfying transitions &mdash; specifically when opening the menu or a project, where they would fade in and be revealed behind some "sliding doors". Setting up the carefully timed transitions for each element was a great opportunity for me to solidify my understanding of JavaScript and React Hooks.</p>
                 </div>
                 <div className="box-video-container">
                     <video preload="none" muted loop className="box-video">
@@ -740,7 +739,7 @@ function Projects() {
                 </div>
                 <div className="challenges">
                     <h3 className="challenges-header">Challenges</h3>
-                    <p className="challenges-content">The "driving force" behind the pricing component is the user's ability to change the component's state using the slider and toggle button, however you'd be surprised at what took most of my time and effort: the slider's progress color. Firefox and IE have a built-in CSS attribute that allows the site to show the slider thumb's progress along the rail. It wasn't so simple with webkit browsers (Safari, Chrome, Opera). Those don't have a built-in slider progress option, so I had to manually fill in the space behind the slider thumb using JavaScript.</p>
+                    <p className="challenges-content">The "driving force" behind the pricing component is the user's ability to change the component's state using the slider and toggle button, however you'd be surprised at what took most of my time and effort: the slider's progress color. Firefox and IE have a built-in CSS property that allows the site to show the slider thumb's progress along the rail. It wasn't so simple with webkit browsers (Safari, Chrome, Opera). Those don't have a built-in slider progress option, so I had to manually fill in the space behind the slider thumb using JavaScript.</p>
                 </div>
                 <div className="box-video-container">
                     <video preload="none" muted loop className="box-video">
@@ -850,7 +849,7 @@ function Projects() {
                 </div>
                 <div className="challenges">
                     <h3 className="challenges-header">Challenges</h3>
-                    <p className="challenges-content">Although I know how to appreciate good design, designing for myself lead to at least 40 drafts on the chopping block until I was able to come to the final design. I wanted my website to have smooth, satisfying transitions &mdash; specifically when opening the menu or a project, where they would fade in and be revealed behind some "sliding doors". Setting up the carefully timed transitions for each element was a great opportunity for me to solidify my understanding of JavaScript and React Hooks.</p>
+                    <p className="challenges-content">The main challenge when building a stopwatch is being able to properly count the elapsed time. Here, I was able to get my first exposure to JavaScript Date objects &mdash; the stopwatch works by marking the time at which the "start" button was pressed (say, 8:04:21PM) and subtracting that from the time at which the "stop" button was pressed (say, 8:04:31PM, at which the stopwatch would indicate that 10 seconds have passed by).</p>
                 </div>
                 <div className="box-video-container">
                     <video preload="none" muted loop className="box-video">
@@ -860,7 +859,7 @@ function Projects() {
                 <div className="technology">
                     <h3 className="technology-header">Technology</h3>
                     <p className="technology-content">
-                        React JS / React Hooks / GSAP
+                        Vanilla JavaScript
                     </p>
                 </div>
                 <div className="box-video-container">
@@ -905,7 +904,7 @@ function Projects() {
                 </div>
                 <div className="challenges">
                     <h3 className="challenges-header">Challenges</h3>
-                    <p className="challenges-content">I never realized how many logical steps it took to run a simple calculator. Sometimes, we just take things for granted. Since the math itself was so simple, it was good chance for me to focus on the logical coding itself.</p>
+                    <p className="challenges-content">I never realized how many logical steps it took to run a simple calculator. Sometimes, we just take things for granted. Since the math itself was so simple, it was a good chance for me to focus on the logical coding itself.</p>
                 </div>
                 <div className="box-video-container">
                     <video preload="none" muted loop className="box-video">
@@ -915,7 +914,7 @@ function Projects() {
                 <div className="technology">
                     <h3 className="technology-header">Technology</h3>
                     <p className="technology-content">
-                        React JS / React Hooks / GSAP
+                        Vanilla JavaScript / SASS
                     </p>
                 </div>
                 <div className="box-video-container">

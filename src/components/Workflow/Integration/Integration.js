@@ -70,7 +70,7 @@ function Integration() {
                         </div>
                         <ul>
                             <li>Homepage</li>
-                            <li>Navigation bar</li>
+                            <li>Navigation</li>
                             <li>Page content</li>
                             <li>Etc.</li>
                         </ul>

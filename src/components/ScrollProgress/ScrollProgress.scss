@@ -21,3 +21,12 @@ $dark-grayish-green: #a5b1a1;
         background-color: $dark-grayish-green;
     }
 }
+
+// MEDIA QUERIES
+// ---------------------------
+@media (max-width: 900px) {
+    .scroll-container {
+        left: 0;
+    }
+}
+// ---------------------------

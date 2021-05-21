@@ -72,14 +72,11 @@ $very-dark-gray: #242424;
         height: 100%;
 
         opacity: 0;
-        transition: 
-            opacity 400ms ease-in-out,
-            transform 400ms ease-in-out;
+        transition: opacity 400ms ease-in-out;
 
         &.open {
             z-index: 3;
             opacity: 1;
-            transform: translateY(0);
         }
 
         &.close {

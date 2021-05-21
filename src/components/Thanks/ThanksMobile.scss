@@ -1,0 +1,289 @@
+// 
+// Thanks Page Mobile Style
+// 
+
+// colors
+$off-white: #fffaef;
+$dark-grayish-green: #a5b1a1;
+$very-dark-gray: #242424;
+
+.thanks-container-mobile {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    font-family: "Work Sans";
+    color: $very-dark-gray;
+
+    .thanks-background-mobile {
+
+        .line {
+            z-index: 10;
+            position: absolute;
+            left: 0;
+            width: 20px;
+            height: 100vh;
+            background-color: transparent;
+            border-right: 2px solid $very-dark-gray;
+        }
+
+        .title-marquee {
+            z-index: 10;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 20px;
+            height: 100vh;
+            white-space: nowrap;
+            font-size: 14px;
+            overflow: hidden;
+
+            .title-content {
+                display: block;
+                position: relative;
+
+                .title {
+                    width: 20px;
+
+                    p {
+                        margin-bottom: 115px;
+                        transform: rotate(90deg);
+                        color: $very-dark-gray;
+                    }
+                }
+            }
+        }
+    }
+
+    .thanks-content-mobile {
+        z-index: 1;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+
+        top: 0;
+
+        display: grid;
+        grid-template-columns: 22px minmax(0, 1fr);
+        grid-template-rows: repeat(5, minmax(0, 1fr));
+
+        background-color: $off-white;
+        opacity: 0;
+        transition: opacity 400ms ease-in-out;
+
+        &.open {
+            z-index: 4;
+            opacity: 1;
+        }
+
+        .thanks-statement {
+            grid-column: 2;
+            grid-row: 1;
+            justify-self: center;
+            align-self: end;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            opacity: 0;
+            transform: translateY(50px);
+            transition: 
+                opacity 400ms ease-in-out,
+                transform 400ms ease-in-out;
+
+            &.open {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact {
+            grid-column: 2;
+            grid-row: 2;
+            justify-self: center;
+            align-self: end;
+
+            font-size: 60px;
+            font-weight: 400;
+
+            opacity: 0;
+            transition: opacity 600ms ease-in-out;
+
+            &.open {
+                opacity: 1;
+            }
+        }
+
+        .contact-line-mobile {
+            grid-column: 2;
+            grid-row: 2;
+            justify-self: center;
+            align-self: end;
+
+            width: 0;
+            height: 70px;
+
+            background-color: transparent;
+            border-bottom: 2px solid $very-dark-gray;
+
+            transition: width 400ms ease-in-out 200ms;
+
+            &.open {
+                width: 274px;
+            }
+        }
+
+        .line-down {
+            grid-column: 2;
+            grid-row: 3;
+            justify-self: center;
+
+            width: 2px;
+            height: 0;
+
+            background-color: $very-dark-gray;
+
+            transition: height 400ms ease-in-out 600ms;
+
+            &.open {
+                height: 100%;
+            }
+        }
+
+        .links-line {
+            grid-column: 2;
+            grid-row: 4;
+            justify-self: center;
+
+            width: 0;
+            height: 2px;
+
+            background-color: $very-dark-gray;
+
+            transition: 400ms ease-in-out 1s;
+
+            &.open {
+                width: 350px;
+            }
+        }
+
+        .links-container-mobile {
+            grid-column: 2;
+            grid-row: 4;
+            justify-self: center;
+
+            width: 350px;
+            height: 56px;
+
+            // border: 2px solid $very-dark-gray;
+            // border-bottom: 2px solid $very-dark-gray;
+
+            display: flex;
+            justify-content: center;
+
+            opacity: 0;
+            transition: opacity 400ms ease-in-out 1s;
+
+            &.open {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            ul {
+                list-style: none;
+
+                li {
+                    display: inline-block;
+                    padding: 20px 0;
+
+                    font-size: 14px;
+                    font-weight: 600;
+
+                    span {
+                        text-decoration: underline;
+                        text-underline-offset: 2px;
+
+                        transition: color 200ms ease-in-out;
+
+                        &:hover {
+                            color: $dark-grayish-green;
+                        }
+                    }
+
+                    a {
+                        color: $very-dark-gray;
+                        text-underline-offset: 2px;
+
+                        transition: color 200ms ease-in-out;
+
+                        &:hover {
+                            color: $dark-grayish-green;
+                        }
+                    }
+
+                    &:nth-child(1), &:nth-child(2) {
+                        padding-right: 93px;
+                    }
+                }
+            }
+        }
+
+        .email-copy-alert {
+            grid-column: 2;
+            grid-row: 4;
+            justify-self: center;
+            align-self: center;
+
+            opacity: 0;
+            transition: opacity 400ms ease-in-out;
+
+            p {
+                font-size: 14px;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+// MEDIA QUERIES
+// -------------------------------
+@media (max-width: 420px) {
+    .thanks-container-mobile {
+        .thanks-content-mobile {
+
+            .thanks-statement {
+                font-size: 12px;
+            }
+            
+            .contact {
+                font-size: 40px;
+            }
+
+            .contact-line-mobile {
+                &.open {
+                    width: 182px;
+                }
+            }
+
+            .links-line {
+                &.open {
+                    width: 230px;
+                }
+            }
+
+            .links-container-mobile {
+                width: 230px;
+
+                ul {
+                    li {
+                        font-size: 12px;
+
+                        &:nth-child(1), &:nth-child(2) {
+                            padding-right: 45px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// -------------------------------
