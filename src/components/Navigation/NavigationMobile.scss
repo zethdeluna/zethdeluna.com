@@ -2,3 +2,188 @@
 // Navigation Page Mobile Style
 // 
 
+// colors
+$off-white: #fffaef;
+$dark-grayish-green: #a5b1a1;
+$very-dark-gray: #242424;
+
+.navigation-container-mobile {
+    z-index: 24;
+    position: fixed;
+    top: -100vh;
+    // top: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: $off-white;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 400ms ease-in-out;
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: minmax(0, 1fr) 330px 50px minmax(0, 1fr);
+
+    .nav-items-mobile {
+        grid-column: 1;
+        grid-row: 2;
+        justify-self: center;
+        align-self: center;
+
+        list-style: none;
+
+        height: 0;
+        // height: 175px;
+        width: 320px;
+        overflow: hidden;
+        transition: height 400ms ease-in-out;
+
+        li {
+            text-align: center;
+            text-justify: center;
+
+            a {
+                color: $very-dark-gray;
+                font-size: 60px;
+                font-weight: 600;
+                letter-spacing: -4px;
+                text-decoration: none;
+                line-height: 60px;
+            }
+        }
+    }
+
+    .nav-box-mobile {
+        position: absolute;
+        justify-self: center;
+        align-self: center;
+
+        background-color: transparent;
+
+        opacity: 0;
+        transition: opacity 400ms ease-in-out;
+
+        .line {
+            width: 420px;
+            height: 2px;
+            background-color: $very-dark-gray;
+
+            transition: transform 400ms ease-in-out;
+
+            // &:nth-child(1) {
+            //     transform: translateY(-153px);
+            // }
+            // &:nth-child(2) {
+            //     transform: translateY(109px);
+            // }
+        }
+    }
+
+    .my-links {
+        grid-column: 1;
+        grid-row: 3;
+        justify-self: center;
+        align-self: center;
+
+        list-style: none;
+
+        transform: translateY(-20px);
+        opacity: 0;
+        transition: 
+            opacity 400ms ease-in-out,
+            transform 400ms ease-in-out;
+
+        li {
+            display: inline-block;
+            padding: 0 27px;
+
+            .link {
+                z-index: 2;
+                position: relative;
+                font-size: 14px;
+                text-decoration: underline;
+                text-underline-offset: 2px;
+                color: $very-dark-gray;
+
+                cursor: pointer;
+
+                transition: color 200ms ease-in-out;
+
+                &:hover {
+                    color: $dark-grayish-green;
+                }
+            }
+        }
+    }
+
+    .email-alert {
+        grid-column: 1;
+        grid-row: 4;
+        justify-self: center;
+
+        font-size: 14px;
+
+        opacity: 0;
+        transition: opacity 400ms ease-in-out;
+    }
+}
+
+.menu-btn-mobile {
+    z-index: 25;
+    position: fixed;
+    top: 47px;
+    right: 0;
+
+    width: 80px;
+    height: 28px;
+
+    border: none;
+    background-image: linear-gradient(
+        to bottom,
+        $very-dark-gray 0%,
+        $very-dark-gray 50%,
+        $dark-grayish-green 50%,
+        $dark-grayish-green 100%
+    );
+    background-size: 80px 56px;
+    transition: 
+        background-position 200ms ease-in-out,
+        color 200ms ease-in-out,
+        opacity 1s ease-in-out;
+    transition-delay: 100ms;
+
+    font-family: "Work Sans";
+    font-weight: 600;
+    font-size: 14px;
+    color: $off-white;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+        color: $very-dark-gray;
+        background-position: -100% 100%;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &.hide-text {
+        color: transparent;
+    }
+}
+
+// MEDIA QUERIES
+// -----------------------------------
+@media (max-width: 420px) {
+    .menu-btn-mobile {
+
+        height: 24px;
+    
+        transform: rotate(-90deg) translateX(3px) translateY(28px);
+    }
+}
+// -----------------------------------

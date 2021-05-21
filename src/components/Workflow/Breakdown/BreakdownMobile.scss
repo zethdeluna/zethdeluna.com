@@ -231,8 +231,8 @@ $very-dark-gray: #242424;
 
                 animation: line-slide-mobile 3s ease-in-out infinite;
                 @keyframes line-slide-mobile {
-                    from { transform: translateX(-100%) }
-                    to { transform: translateX(200%) }
+                    0% { transform: translateX(-100vw) }
+                    100% { transform: translateX(200vw) }
                 }
             }
 

@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import './Navigation.scss';
 
-function Navigation2() {
+function Navigation() {
     // menu button functionality
     // ----------------------------------
     const [isOpen, setIsOpen] = useState(null);
@@ -64,7 +64,7 @@ function Navigation2() {
             }, 400);
 
             setTimeout(() => {
-                menu.style.top = "-100vw";
+                menu.style.top = "-100vh";
                 menu.style.visibility = "hidden";
             }, 1200)
 
@@ -287,8 +287,8 @@ function Navigation2() {
         <div ref={menuRef} className="nav-container">
             <ul ref={itemsRef} className="nav-items">
                 <li><a ref={aboutLinkRef} href="#about-container" onClick={toggleMenu}>About</a></li>
-                <li><a ref={workflowLinkRef} href="#workflow-container" onClick={toggleMenu}>Workflow</a></li>
                 <li><a ref={projectsLinkRef} href="#projects-container" onClick={toggleMenu}>Projects</a></li>
+                <li><a ref={workflowLinkRef} href="#workflow-container" onClick={toggleMenu}>Workflow</a></li>
             </ul>
 
             <div ref={boxRef} className="nav-box">
@@ -303,7 +303,7 @@ function Navigation2() {
                 <li><a href="https://github.com/zethdeluna" target="_blank" rel="noreferrer" className="link">GitHub</a></li>
                 <li><a href="https://www.linkedin.com/in/zethdeluna/" target="_blank" rel="noreferrer" className="link">LinkedIn</a></li>
             </ul>
-            <p ref={testAlertRef} className="email-alert">You copied my email...</p>
+            <p ref={testAlertRef} className="email-alert">You copied my email</p>
 
         </div>
         <ul ref={frontLinksRef} className="front-links">
@@ -326,4 +326,4 @@ function Navigation2() {
     )
 }
 
-export default Navigation2;
+export default Navigation;
